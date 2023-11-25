@@ -15,6 +15,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
   <link href="./static/assets/favicon.ico" rel="icon">
   <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/python2.png')}}">
+  <link rel="stylesheet" href="./static/prism.css">
   
   <title>Web Scraping</title>  
 
@@ -77,30 +78,33 @@
               </div>
               <div class="col-md-8">
               <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Summary:</span></u></b></p>
-			  <p style="text-align: justify;">Data scraping from the website: "www.boardgamegeek.com" and creation of four csv files about board games,
-			  their ratings, types, minimum and maximum number of players, price, their designers etc. Total number of pages
-			  scraped: 25200.</p>
+			  <p style="text-align: justify;">Data scraping from the website: "www.boardgamegeek.com" and creation of four csv files about board games which 
+			  create a small database. These four csv files contain information about the boardgame ratings, types, minimum and maximum number of players, price, 
+			  their designers, publishers, artists etc. Total number of pages scraped: 25200.</p>
 			  <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Tools used:</span></u></b></p>
-			  <p>Python with the following libraries: Pandas, Beautiful Soup, Selenium</p>
+			  <p>Python with the following main libraries: Pandas, Beautiful Soup, Selenium</p>
               <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Project details:</span></u></b></p>
 			  <p style="text-align: justify;">In this project I used Python to scrape data from the most known and complete web site about board games.
 			  In this web site there is a ranking (list) of ALL board games ever created (including chess) spanning through almost 1490 
 			  pages of 100 board games each. I scraped the data up to page 252 (meaning a total number of 25200 pages) because 
 			  from then on the games were not well known, did not have much info and thus were of no interest.</p>
-			  <p style="text-align: justify;">Many difficulties across the creation of the appropriate code needed to be handled. The first of them was that the web
+			  <p style="text-align: justify;">The data scraped have also been cleaned (in a degree) during the scraping procedure.
+			  Many difficulties across the creation of the appropriate code needed to be handled. The first of them was that the web
 			  site displays only the first 20 pages if you are not logged in. So I needed to automate the "sign in" procedure using 
-			  selenium to automatically open the browser in the login page, insert my username and password and press the sign in button. 
+			  "selenium" to automatically open the browser in the login page, insert my username and password and press the sign-in button. 
 			  The second difficulty was that upon automatically opening the browser in the login page, an "accept cookies" pop-up appears in 
-			  the bottom of the page interrupting the automatic completion of the username and password. Again using the selenium library
-			  an automatic "press ok to the cookie button" was made. Another difficulty was the missing values or missing elements such as 
-			  that some games have a standard number of players and not a minimum and a maximum number, which changes a bit the structure of 
-			  the page.</p>
-			  <p style="text-align: justify;">After all issues were handled, the four parts of the code created four csv files. The first file (bg_database.csv) contains 
-			  the table with the board game titles, Geek Rating(a rating computed by the websites algorithm), Average user rating, Number of 
-			  voters, Price (amazon), Year, Complexity, Minimum number of players, Maximum number of players, Minimum time, Maximum time, Age, 
-			  Type of the board game, Second type (if it the game has). The other three csv files (bg_designers, bg_publishers, bg_artists) 
-			  contain information about the designers, the publishers and the artists participating in a board game. All these four files create 
-			  a relational database. The database creation and manipulation using SQL is the topic of the second Project.</p>
+			  the bottom of the page interrupting the automatic completion of the username and password. Again using the "selenium" library
+			  an automatic "press ok to the cookie button" was made. Another difficulty was the missing values or missing elements in many categories 
+			  such as some games have a standard number of players and not a minimum and a maximum number, which changes the structure of 
+			  the page and a modification had to be made in the code.</p>
+			  <p style="text-align: justify;">After all issues were handled, the four parts of the code created four csv files. The first file 
+			  (bg_database.csv), which is the main and biggest one, contains the table with the board game titles, Geek Rating(a rating computed 
+			  by the websites algorithm), Average user rating, Number of voters, Price (amazon), Year, Complexity, Minimum number of players, Maximum 
+			  number of players, Minimum time, Maximum time, Age, Type of the board game and Second type (if it the game has). The other three csv files 
+			  (bg_designers, bg_publishers, bg_artists) contain information about the designers, the publishers and the artists of each board game. 
+			  Keep in mind that in the case of designers, publishers and artists a maximum number of five was obtained as some games had many more, 
+			  but obtaining everything from the web-site was not the goal of this project. All these four files create a relational database. 
+			  The database creation and manipulation using SQL is the topic of the second Project.</p>
               </div>
             </div>
           </div>
@@ -115,53 +119,45 @@
               </div>
               <div class="col-md-8">
 
-              <p style="text-align: justify;">The main python libraries used are: Pandas, BeautifulSoup and Selenium. Other modules also used were the 
-			  time, re (regular expressions) and requests.</p>
+              <p style="text-align: justify;">The main python libraries used are: "Pandas", "BeautifulSoup" and "Selenium". Other modules also used were the 
+			  "time", "re" (regular expressions) and "requests".</p>
               <ul>
-			  <li><p style="text-align: justify;"> The pandas library is used to obtain the scraped information in the form of tables, 
+			  <li><p style="text-align: justify;"> The "Pandas" library is used to obtain the scraped information in the form of tables, 
 			  manipulate them and finally produce the results in csv files.</p></li>
-			  <li><p style="text-align: justify;">The requests module is used to send HTTP requests using Python and helps us get the content of the web page as text. </p></li>
-			  <li><p style="text-align: justify;">The BeatifulSoup package is used for parsing and extracting data out of the HTML documents of the webpage, in which all 
-			  the information is stored, by providing ways to navigate and search the parse tree.</p></li>
-			  <li><p>The Selenium package helps us automate procedures of web pages such as logging in. </p></li>
-			  <li><p>The re module is used to help us obtain the desired information through text patterns.</p></li>
-			  <li><p>The time module is just used to record the duration of the procedure.</p></li>
+			  <li><p style="text-align: justify;">The "requests" module is used to send HTTP requests using Python and helps us get the content of 
+			  the web page as text. </p></li>
+			  <li><p style="text-align: justify;">The "BeatifulSoup" package is used for parsing and extracting data out of the HTML documents of 
+			  the webpage, in which all the information is stored, by providing ways to navigate and search the parse tree.</p></li>
+			  <li><p>The "Selenium" package helps us automate procedures of web pages such as logging in or pressing buttons. </p></li>
+			  <li><p>The "re" module is used to help us obtain the desired information through text patterns.</p></li>
+			  <li><p>The "time" module is just used to record the duration of the procedure.</p></li>
 			  </ul>
               </div>
             </div>
           </div>
         </div>
-
         
 
         <div class="card">
           <div class="card-block">
-            <h2>Education</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2017-2015</small>
-                  <h3 class="h5 date-title">Design Master</h3>
-                  <p>Chicago University</p>
-                </div>
-                
-              </div>
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2015-2012</small>
-                  <h3 class="h5 date-title">Metrics Degree</h3>
-                  <p>Ecole 87</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2012-2011</small>
-                  <h3 class="h5 date-title">Motion Design Course</h3>
-                  <p>Pascal’s Lee Studio</p>
-                </div>
-              </div>
-            </div>
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Python code and resulting dataframes</h2>
+			<h3>Part 1: Creation of "Board Game info" table</h3>
+			<h3 class="h5" ><a href="./project1.1_thecode.html" title="">The code</a></h3>
+			<h3 class="h5"><a href="./project1.1_thecode.html" title="">The dataframe</a></h3>
+			<br>
+			<h3>Part 2: Creation of "Designers info" table</h3>
+			<h3 class="h5"><a href="./project1.1_thecode.html" title="">The code</a></h3>
+			<h3 class="h5"><a href="./project1.1_thecode.html" title="">The dataframe</a></h3>
+			<br>
+			<h3>Part 3: Creation of "Artists info" table</h3>
+			<h3 class="h5"><a href="./project1.1_thecode.html" title="">The code</a></h3>
+			<h3 class="h5"><a href="./project1.1_thecode.html" title="">The dataframe</a></h3>
+			<br>
+			<h3>Part 4: Creation of "Publishers info" table</h3>
+			<h3 class="h5"><a href="./project1.1_thecode.html" title="">The code</a></h3>
+			<h3 class="h5"><a href="./project1.1_thecode.html" title="">The dataframe</a></h3>
           </div>
+
         </div>
         
         <div class="card">
@@ -181,7 +177,7 @@
           </div>
         </div>
 
-       
+
        
      </div>
    </div>
@@ -235,6 +231,9 @@
   ga('send', 'pageview');
 </script>
 
---><script type="text/javascript" src="./static/main.bc58148c.js"></script></body>
+-->
+<script src="./static/prism.js"></script>
+<script type="text/javascript" src="./static/main.bc58148c.js"></script>
+	       </body>
 
 </html>
