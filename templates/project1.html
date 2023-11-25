@@ -78,17 +78,17 @@
               </div>
               <div class="col-md-8">
               <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Summary:</span></u></b></p>
-			  <p style="text-align: justify;">Data scraping from the website: "www.boardgamegeek.com" and creation of four csv files about board games which 
+			  <p style="text-align: justify; font-size: 18px;">Data scraping from the website: "www.boardgamegeek.com" and creation of four csv files about board games which 
 			  create a small database. These four csv files contain information about the boardgame ratings, types, minimum and maximum number of players, price, 
 			  their designers, publishers, artists etc. Total number of pages scraped: 25200.</p>
 			  <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Tools used:</span></u></b></p>
 			  <p>Python with the following main libraries: Pandas, Beautiful Soup, Selenium</p>
               <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Project details:</span></u></b></p>
-			  <p style="text-align: justify;">In this project I used Python to scrape data from the most known and complete web site about board games.
+			  <p style="text-align: justify; font-size: 18px;">In this project I used Python to scrape data from the most known and complete web site about board games.
 			  In this web site there is a ranking (list) of ALL board games ever created (including chess) spanning through almost 1490 
 			  pages of 100 board games each. I scraped the data up to page 252 (meaning a total number of 25200 pages) because 
 			  from then on the games were not well known, did not have much info and thus were of no interest.</p>
-			  <p style="text-align: justify;">The data scraped have also been cleaned (in a degree) during the scraping procedure.
+			  <p style="text-align: justify; font-size: 18px;">The data scraped have also been cleaned (in a degree) during the scraping procedure.
 			  Many difficulties across the creation of the appropriate code needed to be handled. The first of them was that the web
 			  site displays only the first 20 pages if you are not logged in. So I needed to automate the "sign in" procedure using 
 			  "selenium" to automatically open the browser in the login page, insert my username and password and press the sign-in button. 
@@ -97,7 +97,7 @@
 			  an automatic "press ok to the cookie button" was made. Another difficulty was the missing values or missing elements in many categories 
 			  such as some games have a standard number of players and not a minimum and a maximum number, which changes the structure of 
 			  the page and a modification had to be made in the code.</p>
-			  <p style="text-align: justify;">After all issues were handled, the four parts of the code created four csv files. The first file 
+			  <p style="text-align: justify; font-size: 18px;">After all issues were handled, the four parts of the code created four csv files. The first file 
 			  (bg_database.csv), which is the main and biggest one, contains the table with the board game titles, Geek Rating(a rating computed 
 			  by the websites algorithm), Average user rating, Number of voters, Price (amazon), Year, Complexity, Minimum number of players, Maximum 
 			  number of players, Minimum time, Maximum time, Age, Type of the board game and Second type (if it the game has). The other three csv files 
