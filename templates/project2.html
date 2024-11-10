@@ -14,10 +14,10 @@
   
   <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
   <link href="./static/assets/favicon.ico" rel="icon">
-  <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/sql.png')}}">
-  <link rel="stylesheet" href="./static/prism.css">
+  <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/R_pic2.png')}}">
+  <link rel="stylesheet" href="./static/prism.css">+++--
   
-  <title>SQL</title>  
+  <title>Comparing classifiers using R</title>  
 
   <style>
     .home-button {
@@ -51,12 +51,12 @@
 <body class="">
 <a href="/" class="home-button">Home</a>
 <!-- Add your content of header -->
-<div class="background-color-layer" style="background-image: url('/static/assets/images/bgg3.png')"
+<div class="background-color-layer" style="background-image: url('/static/assets/images/R_pic3.jpg')"
 ></div>
 <main class="content-wrapper">
   <header class="white-text-container section-container">
     <div class="text-center">
-      <h1>SQL</h1>
+      <h1>Comparing classifiers using R</h1>
   
     </div>
   </header>
@@ -74,16 +74,43 @@
             <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">About the project</h2>
             <div class="row">
               <div class="col-md-4">
-                <p><img src="./static/assets/images/bgg2.jpg" class="img-responsive" alt=""></p>
+                <p><img src="./static/assets/images/R_pic.jpg" class="img-responsive" alt="" style="width: 85%; height: auto;"></p>
               </div>
               <div class="col-md-8">
               <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Summary:</span></u></b></p>
-			  <p style="text-align: justify;">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+			  <p style="text-align: justify; font-size: 18px;">In this project, I undertake an analysis of the renowned Titanic dataset, 
+			  employing the R programming language and RStudio software. The methodology includes the following steps: <br>
+			  - <b style="color: black;">Conduct an exploratory analysis. </b> This dataset includes various attributes of the Titanic's 
+			  passengers as well as their survival status.<br>
+			  - <b style="color: black;">Preprocess the data. </b> The preprocessing steps include the removal of unnecessary columns, handling 
+			  of missing values, one-hot encoding of categorical attributes, transformation of the 'gender' attribute to a numeric form, and 
+			  normalization (scaling) of the data, given that many algorithms are sensitive to the magnitude of attribute values. Additionally, 
+			  Principal Component Analysis (PCA) is employed for dimensionality reduction, which not only enhances computational efficiency but 
+			  also improves the performance of several algorithms.<br>
+			  - <b style="color: black;">Compare seven renowned classification algorithms.</b> This involves training these classification 
+			  algorithms using the K-fold cross-validation ensemble method to predict passenger survival based on their attributes. 
+			  The prediction results of these classifiers are subsequently evaluated using five different metrics (Accuracy, AUC score, 
+			  Recall, Precision, F1-score) and compared. Finally, the most suitable classifier is selected.</p>
 			  <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Tools used:</span></u></b></p>
-			  <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+			  <p style="text-align: justify; font-size: 18px;">R-studio with the following packages: class, pROC, e1071, randomForest, rpart, 
+			  neuralnet, stats.</p>
               <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Project details:</span></u></b></p>
-			  <p style="text-align: justify;">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-
+			  <p style="text-align: justify; font-size: 18px;">Classification is among the most prevalent applications of machine learning. It involves the process of 
+			  assigning an object or record to a specific class based on its attributes. To enable the machine to accurately determine the appropriate class for a given 
+			  object, it must first be trained using labeled examples. </p>
+			  <p style="text-align: justify; font-size: 18px;">Numerous algorithms are dedicated to the task of classification. In this project we
+			  will compare seven of them: 
+			  <br><b style="color: black;">1) K-Nearest Neighbors (KNN)</b> 
+			  <br><b style="color: black;">2) Artificial Neural Networks (ANN) </b> 
+			  <br><b style="color: black;">3) Support Vector Machines (SVM) </b> 
+			  <br><b style="color: black;">4) Random Forests </b> 
+			  <br><b style="color: black;">5) Naive Bayes classifier </b> 
+			  <br><b style="color: black;">6) Decision Tree </b> 
+			  <br><b style="color: black;">7) Logistic Regression </b> </p>
+			  <p style="text-align: justify; font-size: 18px;">Firstly an exploratory analysis is being made to the dataset and its features. Inside the code (which you can view below in the "R-code" section) there are comments and discussion 
+			  about each step of the procedure and the analysis from the beginning to the end. Secondly a data preprocessing step is performed in order for the dataset to be in
+			  appropriate format for the algorithms to utilize it. Finally the classifiers are trained and tested and their predictions are measured with 
+			  five different metrics.</p>
               </div>
             </div>
           </div>
@@ -91,54 +118,73 @@
 
 		<div class="card">
           <div class="card-block">
-            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Procedures - Tools</h2>
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Tools - Packages</h2>
             <div class="row">
               <div class="col-md-4">
-                <p><img src="./static/assets/images/procedures.png" class="img-responsive" alt=""></p>
+                <p><img src="./static/assets/images/R-studio-logo.png" class="img-responsive" alt="" style="width: 85%; height: auto;"></p>
               </div>
               <div class="col-md-8">
 
-              <p style="text-align: justify;">xxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+              <p style="ext-align: justify; font-size: 18px;">R-Studio was used along with the following libraries-packages: 
+			  class, pROC, e1071, randomForest, rpart, neuralnet, stats.</p>
               <ul>
-			  <li><p style="text-align: justify;"> xxxxxxxxxxxxxxxxxxxxxx</p></li>
-			  <li><p style="text-align: justify;">xxxxxxxxxxxxxxxxxxxxxxxxx</p></li>
-			  <li><p style="text-align: justify;">xxxxxxxxxxxxxxxxxxxxxxx</p></li>
-			  <li><p>xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p></li>
-			  <li><p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></li>
-			  <li><p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></li>
+			  <li><p style="ext-align: justify; font-size: 18px;"> The <b style="color: black;">"class"</b> library  
+			  is primarily used for classification, and it includes functions for K-Nearest Neighbors (KNN) classification. 
+			  One of the most commonly used functions from the class package is knn(), which performs K-Nearest Neighbors classification.</p></li>
+			  <li><p style="ext-align: justify; font-size: 18px;">The <b style="color: black;">"pROC"</b> library is used to 
+			  compute the area under the ROC curve (AUC). The AUC-score is a single scalar value summarizing the performance of 
+			  the classifier. An AUC value of 1 indicates perfect classification, while a value of 0.5 suggests no better than 
+			  random guessing. </p></li>
+			  <li><p style="ext-align: justify; font-size: 18px;">The <b style="color: black;">"e1071"</b> is a comprehensive 
+			  package that includes a variety of tools for machine learning, statistical computing, and data analysis. In this project 
+			  we use it for the implementation of Support Vector Machines (SVM) and Naive Bayes classification algorithms. The  
+			  svm() function allows us to fit SVM models and the naiveBayes() function allows us to implement the Naive Bayes method.</p></li>
+			  <li><p style="ext-align: justify; font-size: 18px;">The <b style="color: black;">"randomForest"</b> library is used for 
+			  implementing the Random Forest algorithm, which is an ensemble learning method for classification, regression, and other
+			  tasks. Random Forest operates by constructing multiple decision trees during training and outputting the mode of the 
+			  classes (classification) or mean prediction (regression) of the individual trees. </p></li>
+			  <li><p style="ext-align: justify; font-size: 18px;">The <b style="color: black;">"rpart"</b> library is used for 
+			  recursive partitioning and regression trees. It provides functions to create classification and regression models in 
+			  the form of decision trees. These trees can be used for both predictive modeling and exploratory data analysis.</p></li>
+			  <li><p style="ext-align: justify; font-size: 18px;">The <b style="color: black;">"neuralnet"</b> library is used for 
+			  training and evaluating artificial neural networks (ANNs). It is designed to provide a flexible and straightforward 
+			  way to create and train neural networks for regression and classification tasks. It supports various customization options,
+			  including specifying the number of hidden layers and neurons, choosing the activation functions, and setting learning 
+			  parameters.</p></li>
+			  <li><p style="ext-align: justify; font-size: 18px;">The <b style="color: black;">"stats"</b> package is preinstalled with 
+			  the base R installation, so no extra installation is needed. This package includes a variety of functions for statistical 
+			  analysis, including the glm() function which we use for fitting generalized linear models such as Logistic Regression.</p></li>
 			  </ul>
               </div>
             </div>
           </div>
         </div>
-
         
 
         <div class="card">
           <div class="card-block">
-            <h2>The code</h2>
-            <div class="row">
-
-
-              
-            </div>
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">R-code and output</h2>
+			<h3>Comparing classifiers using R</h3>
+			<h3 class="h5" ><a href="./project2.1_thecode.html" title="">The code</a></h3>
+			<h3 class="h5"><a href="./project2.2_theoutput.html" title="hoho">Console output - Plots - Conclusion</a></h3>
           </div>
+
         </div>
         
         <div class="card">
           <div class="card-block">
             <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Project Downloads</h2>
             <div class="row">
-              <div class="col-md-4">
+			   <div class="col-md-4">
                 <div class="language-experience">
-                  <a href="./static/assets/downloads/python_code.txt" download="python_code.txt"><h3 class="h5">Python code  </a><small>(txt file)</small></h3>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5">csv files  <small>(zipped csv files)</small></h3>
+                  <a href="./static/assets/downloads/Titanic_Dataset.csv" download="csv_files.zip"><h3 class="h5">The Titanic dataset </a><small>(csv file)</small></h3>
                 </div>
             </div>
+              <div class="col-md-4">
+                <div class="language-experience">
+                  <a href="./static/assets/downloads/Titanic_dataset_analysis.R" download="python_code.txt"><h3 class="h5">R code  </a><small>(R file)</small></h3>
+                </div>
+              </div>
           </div>
         </div>
 
