@@ -13,6 +13,9 @@ def test_email():
     send_email('Test Subject', 'This is a test email body.')
     return 'Email Sent'
 
+print("Email User:", os.getenv("EMAIL_USER"))
+print("Email Password:", os.getenv("EMAIL_PASSWORD"))
+
 
 # Function to send email notification
 def send_email(subject, body):
@@ -32,7 +35,7 @@ def send_email(subject, body):
 
     try:
         # Connect to Hotmail's SMTP server and send the email
-        server = smtplib.SMTP('smtp.live.com', 587)  # Hotmail SMTP server
+        server = smtplib.SMTP('smtp.office365.com', 587)  # Hotmail SMTP server
         server.starttls()  # Secure the connection
         server.login(email_user, email_password)  # Login using your credentials
         server.sendmail(email_user, to_email, msg.as_string())  # Send the email
