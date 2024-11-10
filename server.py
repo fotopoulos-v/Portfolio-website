@@ -8,6 +8,12 @@ import os
 
 app = Flask(__name__)
 
+@app.route('/test_email')
+def test_email():
+    send_email('Test Subject', 'This is a test email body.')
+    return 'Email Sent'
+
+
 # Function to send email notification
 def send_email(subject, body):
     # Load your email and password from environment variables
