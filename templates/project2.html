@@ -13,9 +13,10 @@
   <meta name="msapplication-tap-highlight" content="no">
   
   <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
-  <link href="./static/assets/favicon.ico" rel="icon">
-  <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/R_pic2.png')}}">
-  <link rel="stylesheet" href="./static/prism.css">+++--
+  <link href="./static/assets/images/R-favicon.png" rel="icon">
+  <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/R-favicon.png')}}">
+  <link rel="stylesheet" href="./static/css/prism.css">
+  
   
   <title>Comparing classifiers using R</title>  
 
@@ -51,7 +52,7 @@
 <body class="">
 <a href="/" class="home-button">Home</a>
 <!-- Add your content of header -->
-<div class="background-color-layer" style="background-image: url('/static/assets/images/R_pic3.jpg')"
+<div class="background-color-layer" style="background-image: url('/static/assets/images/R_pic3.png')"
 ></div>
 <main class="content-wrapper">
   <header class="white-text-container section-container">
@@ -77,7 +78,7 @@
                 <p><img src="./static/assets/images/R_pic.jpg" class="img-responsive" alt="" style="width: 85%; height: auto;"></p>
               </div>
               <div class="col-md-8">
-              <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Summary:</span></u></b></p>
+              <p style="margin-bottom: 0px; color: #11329E;"><b><u><span style="font-size: 18px;">Summary:</span></u></b></p>
 			  <p style="text-align: justify; font-size: 18px;">In this project, I undertake an analysis of the renowned Titanic dataset, 
 			  employing the R programming language and RStudio software. The methodology includes the following steps: <br>
 			  - <b style="color: black;">Conduct an exploratory analysis. </b> This dataset includes various attributes of the Titanic's 
@@ -90,11 +91,11 @@
 			  - <b style="color: black;">Compare seven renowned classification algorithms.</b> This involves training these classification 
 			  algorithms using the K-fold cross-validation ensemble method to predict passenger survival based on their attributes. 
 			  The prediction results of these classifiers are subsequently evaluated using five different metrics (Accuracy, AUC score, 
-			  Recall, Precision, F1-score) and compared. Finally, the most suitable classifier is selected.</p>
-			  <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Tools used:</span></u></b></p>
+			  Recall, Precision, F1-score) and compared. Finally, the most suitable classifier is selected.</p><br>
+			  <p style="margin-bottom: 0px; color: #11329E;"><b><u><span style="font-size: 18px;">Tools used:</span></u></b></p>
 			  <p style="text-align: justify; font-size: 18px;">R-studio with the following packages: class, pROC, e1071, randomForest, rpart, 
-			  neuralnet, stats.</p>
-              <p style="color: #11329E;"><b><u><span style="font-size: 18px;">Project details:</span></u></b></p>
+			  neuralnet, stats.</p><br>
+              <p style="margin-bottom: 0px; color: #11329E;"><b><u><span style="font-size: 18px;">Project details:</span></u></b></p>
 			  <p style="text-align: justify; font-size: 18px;">Classification is among the most prevalent applications of machine learning. It involves the process of 
 			  assigning an object or record to a specific class based on its attributes. To enable the machine to accurately determine the appropriate class for a given 
 			  object, it must first be trained using labeled examples. </p>

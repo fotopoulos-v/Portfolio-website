@@ -13,10 +13,13 @@
   <meta name="msapplication-tap-highlight" content="no">
   
   <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
-  <link href="./static/assets/images/favicon.ico" rel="icon" type="image/x-icon">
+  <link href="./static/assets/images/favicon2.png" rel="icon" type="image/x-icon">
   <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/favicon2.png')}}">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/shine.css">
+  <link rel="stylesheet" href="./static/css/prism.css">
+  
   <style>
         /* Style the input fields */
         input, textarea {
@@ -43,6 +46,104 @@
         }
    </style>
    
+   
+ 
+  
+<style>
+.skill-box {
+  background-color: #007bff;
+  color: white !important;
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 4px 12px 4px 0;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.skill-box::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: -100%;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.skill-box:hover::after {
+  left: 0;
+}
+
+.skill-box:hover {
+  color: #b8860b !important;
+}
+
+.skill-box {
+  z-index: 0;
+}
+</style>
+
+
+<style>
+.edu-box {
+  background-color: #cce5ff;              /* Blue background */
+  color: black;                
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 4px 12px 4px 0;
+  font-weight: 600;
+  border: 2px solid #003366;              /* Dark blue frame */
+  font-family: Arial, sans-serif;         /* Optional: clean font */
+}
+</style>
+
+<style>
+.edu-box2 {
+  background-color: #cce5ff;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 4px 12px 4px 0;
+  font-weight: 600;
+  border: 2px solid #003366;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.edu-box2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: -100%;
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.edu-box2:hover::after {
+  left: 0;
+}
+
+.edu-box2:hover {
+  color: #b8860b !important;
+}
+
+.edu-box2 {
+  z-index: 0;
+}
+
+</style>
+
    
   <title>Vasileios Fotopoulos</title>  
 
@@ -89,43 +190,85 @@
             <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">About me</h2>
             <div class="row">
               <div class="col-md-4">
-                <p><img src="./static/assets/images/img-01.jpg" class="img-responsive" alt=""></p>
+                <p><img src="./static/assets/images/img-10.jpg" class="img-responsive" alt=""></p>
               </div>
               <div class="col-md-8">
 
 
 
-              <p style="font-size: 18px;"><b>Data Scientist<br>Machine Learning | Excel | SQL | Python | R | Sagemath | Tableau</b></p><br>
-              <p style="text-align: justify; font-size: 18px;"> Born in 1982 and residing in Athens, Greece, I hold a degree in Applied Mathematics and 
-			  Physical Sciences, currently pursuing a Master's in Data Science and Machine Learning. A professional with a keen analytical 
-			  mind, I possess skills in SQL, Tableau, and Excel, emphasizing data manipulation and visualization. My Python proficiency is 
-			  expanding to implement machine learning algorithms for predictive analysis. I am passionate about utilizing data to inform 
-			  strategic business decisions and optimize processes. Actively seeking opportunities to apply acquired knowledge and contribute 
-			  to the success of data-driven organizations.</p>
+              <p style="font-size: 18px;"><b>Data Scientist&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;  Mathematician &nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;&nbsp;  Physicist</b></p><br>
+              <p style="text-align: justify; font-size: 18px;"> Born in 1982 and residing in Athens, Greece, holder of a Master's degree in Data Science and Machine Learning.<br>
+			  <br>Skilled in Python, R, SQL, Tableau and Excel. Dedicated to ongoing improvement in Python and its applications in machine learning.<br> 
+			  <br>Passionate about using data science techniques to drive strategic business decisions and optimize processes. 
+			  Actively seeking opportunities to apply my knowledge.</p>
+			  
+			  <br>
+			  <!-- Download CV button -->
+				<a href="./static/assets/downloads/FotopoulosVasileiosCV.pdf" 
+				   class="btn btn-primary" 
+				   style="margin-top: 15px;  font-size: 18px" 
+				   download>
+				   ⬇️ Download CV
+				</a>
 
               </div>
             </div>
           </div>
         </div>
 
+
+
+        <div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Skills</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="language-experience">
+                  <h3 class="h5 edu-box2">Python</h3>
+				  <h3 class="h5 edu-box2">SQL</h3>
+				  <h3 class="h5 edu-box2">R</h3>
+				  <h3 class="h5 edu-box2">Excel</h3>
+				  <h3 class="h5 edu-box2">Git</h3>
+				  <h3 class="h5 edu-box2">Linux</h3>
+				  <h3 class="h5 edu-box2">Tableau</h3>
+				  <h3 class="h5 edu-box2">Web scraping</h3>
+				  <h3 class="h5 edu-box2">Machine Learning</h3>
+				  <h3 class="h5 edu-box2">Deep Learning</h3>
+				  <h3 class="h5 edu-box2">Tensorflow</h3>
+				  <h3 class="h5 edu-box2">Scikit-learn</h3>
+				  <h3 class="h5 edu-box2">Mathematics</h3>
+				  <h3 class="h5 edu-box2">Statistics</h3>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+
+
+
+
         <div class="card">
           <div class="card-block">
             <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Projects</h2>
             <div class="row">
               <div class="col-md-4">
-                <a href="./project1.html"><img src="./static/assets/images/img-02.jpg" class="img-responsive" alt=""></a>
-                <h3 class="h5"><a href="./project1.html" title="">Web Scraping with Python</a></h3>
-                <p>October 2023</p>
+			    <a href="./project3.html" class="shine-hover">
+				<img src="./static/assets/images/DL_image.png" class="img-responsive" alt=""></a>
+                <h3 class="h5"> <a href="./project3.html" title="">Generating Fashion MNIST Images with Deep Learning Models</a></h3>
+                <p>July 2025</p>
               </div>
               <div class="col-md-4">
-                <a href="./project2.html"><img src="./static/assets/images/R_pic.jpg" class="img-responsive" alt=""></a>
+                <a href="./project2.html" class="shine-hover">
+				<img src="./static/assets/images/R_pic4.png" class="img-responsive" alt=""></a>
                 <h3 class="h5"> <a href="./project2.html" title="">Comparing classifiers using R</a></h3>
                 <p>July 2024</p>
               </div>
               <div class="col-md-4">
-                <a href="./project3.html"><img src="./static/assets/images/DL_image.png" class="img-responsive" alt=""></a>
-                <h3 class="h5"> <a href="./project3.html" title="">Generating Fashion MNIST Images with Deep Learning Models</a></h3>
-                <p>July 2025</p>
+                <a href="./project1.html" class="shine-hover">
+				<img src="./static/assets/images/img-02.jpg" class="img-responsive" alt=""></a>
+                <h3 class="h5"><a href="./project1.html" title="">Web Scraping with Python</a></h3>
+                <p>October 2023</p>
               </div>
             </div>
           </div>
@@ -137,24 +280,24 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="education-experience">
-                  <small class="date">2009</small>
-                  <h3 class="h5 date-title">Applied Mathematical and Physical Sciences (Integrated undergraduate - Master's degree)</h3>
-                  <p>National Technical University of Athens</p>
+				  <small class="date">2025</small>
+                  <h3 class="h5 edu-box2">Data Science and Machine Learning</h3></span><br> <span style="font-weight: normal;">Master's degree</span>
+                  <p>Hellenic Open University</p>
                 </div>
                 
               </div>
               <div class="col-md-4">
                 <div class="education-experience">
-                  <small class="date">2025</small>
-                  <h3 class="h5 date-title">Master's degree in Data Science and Machine Learning</h3>
-                  <p>Hellenic Open University</p>
+                  <small class="date">2009</small>
+                  <h3 class="h5 edu-box2">Applied Mathematical and Physical Sciences</h3><br><span style="font-weight: normal;">Integrated Undergraduate - Master's degree</span>
+                  <p>National Technical University of Athens</p>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="education-experience">
-                  <small class="date">2023</small>
-                  <h3 class="h5 date-title">Vocational training in Data Science with Python</h3>
-                  <p>e-Learning National and Kapodistrian University of Athens</p>
+                  <small class="date">2023</small><br>
+                  <h3 class="h5 edu-box2">Data Science with Python<br><br></h3><span style="font-weight: normal;">Vocational training (3 months)</span>
+                  <p>National and Kapodistrian University of Athens (e-Learning)</p>
                 </div>
               </div>
             </div>
@@ -164,21 +307,24 @@
 		
         <div class="card">
           <div class="card-block">
-            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Work</h2>
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Work experience</h2>
             <div class="work-experience">
               <small class="date">2010-2023</small>
-              <h3 class="h5 date-title">Education coordinator - Athens Mindfit</h3>
-              <p style="text-align: justify;">For over 13 years, I served in a distinguished training center located in Athens, Greece. 
+              <h3 class="h5 date-title">Office Administrator / Education coordinator @ Athens Mindfit Training center</h3>
+              <p style="text-align: justify; font-size: 18px;">For over 13 years, I served in a distinguished training center located in Athens, Greece. 
 			  The center specialized in conducting a range of vital seminars encompassing First Aid, Food Safety, Workplace Safety, 
 			  Fire Safety, Forklift and Crane Safety Measures, as well as Personal Computer and Microsoft Office training. In this capacity, 
 			  my responsibilities extended to meticulously preparing the technical documentation for these seminars, ensuring compliance with 
 			  regulatory requirements mandated by Greek law. These efforts were essential for securing approval from relevant Ministries and 
-			  other accrediting organizations.
+			  other accrediting organizations.<br><br>
 
-				Moreover, my role involved managing the preparation of technical files for various tasks assigned by Greek Ministries and 
+				Apart from the seminars, my role involved managing the preparation of technical files for various tasks assigned by Greek Ministries and 
 				other public organizations. This included the formulation of documentation necessary for individuals to obtain legally mandated 
 				machine operator licenses. The thorough creation and submission of these technical files were integral components of my 
-				professional responsibilities during my tenure at the training center.</p>
+				professional responsibilities during my tenure at the training center.<br><br>
+				
+				Furthermore I prepared and managed documentation for business subsidy applications under national and EU-funded programs. Monitored the progress 
+				of funding applications and ensured compliance with program requirements.</p>
             </div>
           </div>
         </div>
@@ -207,7 +353,7 @@
         
         <div class="card">
           <div class="card-block">
-            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Social Network</h2>
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Social Networks</h2>
             <div class="row">
               <div class="col-md-3">
                 <p class="social-buttons"><a href="https://www.linkedin.com/" target="_blank" title=""><span class="social-round-icon fa-icon"><i class="fa fa-linkedin"></i></span>Vasileios Fotopoulos</a></p>
@@ -248,7 +394,7 @@
 
               </div>
               <div class="form-group">
-                <button type="submit" class=" btn btn-primary" >Send message</button>
+                <button type="submit" class=" btn btn-primary" style="font-size: 18px;">Send message</button>
               </div> 
             </form>
           </div>

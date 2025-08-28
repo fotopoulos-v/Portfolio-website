@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
+  <link href="./static/assets/images/favicon2.png" rel="icon">
+  <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/TF_Icon.png')}}">
+  <link rel="stylesheet" href="./static/css/prism.css">
+  
+  <title>Generating Fashion MNIST Images with Deep Learning Models</title>  
+
+  <style>
+    .home-button {
+      position: fixed; /* Make the button fixed */
+      top: 3px; /* Adjust the top position as needed */
+      left: 3px; /* Adjust the left position as needed */
+	  display: inline-block;
+      padding: 8px 16px;
+      background-color: #0074d9; /* Button color */
+	  font-size: 18px;
+	  font-weight: bold; /* Make the text bold */
+	  font-family: Arial, sans-serif; /* Change font type */
+      color: #fff; /* Text color */
+      text-decoration: none; /* Remove underlines from links */
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+	  z-index: 999; /* Set a high z-index value to ensure it's on top */
+    }
+
+    .home-button:hover {
+      background-color: #0056b3; /* Button color on hover */
+	  color: #BBE0FC; /* Text color on hover */
+	  text-decoration: none; /* Remove underlines from links */
+    }
+  </style>
+
+
+<link href="./static/main.d8e0d294.css" rel="stylesheet"></head>
+
+
+<style>
+	.gif-container {
+	  display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	  gap: 10px;
+	  max-width: 100%; /* changed from 95% to 100% */
+	  padding: 0 10px;   /* small horizontal padding */
+	  margin: 40px auto;
+	}
+
+    .gif-box {
+      text-align: center;
+    }
+
+    .gif-box img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #aaa;
+      border-radius: 12px;
+    }
+
+    .gif-title {
+      margin-top: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+
+
+<body class="">
+<a href="/" class="home-button">Home</a>
+<!-- Add your content of header -->
+<div class="background-color-layer" style="background-image: url('/static/assets/images/TF_FullColor_Icon.png')"
+></div>
+<main class="content-wrapper">
+  <header class="white-text-container section-container">
+    <div class="text-center">
+      <h1>Generating Fashion MNIST Images <br><span style="font-size: 42px;">with Deep Learning Models</span></h1>
+  
+    </div>
+  </header>
+
+
+
+<!-- Add your site or app content here -->
+ 
+ <div class="container">
+   <div class="row">
+     <div class="col-xs-12">
+
+        <div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">About the project</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <p><img src="./static/assets/images/fashion_mnist.png" class="img-responsive" alt=""></p>
+              </div>
+              <div class="col-md-8">
+              <p style="margin-bottom: 0px; color: #11329E;"><b><u><span style="font-size: 18px;">Summary:</span></u></b></p>
+			  <p style="text-align: justify; font-size: 18px;">This project focuses on generating Fashion MNIST images using four deep learning models: 
+			  Generative Adversarial Network (GAN), Deep Convolutional GAN (DCGAN), Variational Autoencoder (VAE) and a Diffusion Model.
+			  The models are evaluated based on on visual quality and diversity of the synthesized fashion images.</p><br>
+			  <p style="margin-bottom: 0px; color: #11329E;"><b><u><span style="font-size: 18px;">Tools used:</span></u></b></p>
+			  <p style="text-align: justify; font-size: 18px;">Developed using Python and the TensorFlow 2 library. Model training and experimentation were performed on Google Colab 
+			  to leverage its GPU acceleration for faster training.</p><br>
+              <p style="margin-bottom: 0px; color: #11329E;"><b><u><span style="font-size: 18px;">Project details:</span></u></b></p>
+			  <p style="text-align: justify; font-size: 18px;">This project explores advanced deep learning techniques for generating synthetic fashion 
+			  images using the Fashion MNIST dataset. The primary goal is to train and compare four generative architectures: Generative 
+			  Adversarial Network (GAN), Deep Convolutional GAN (DCGAN), Variational Autoencoder (VAE), and Denoising Diffusion Probabilistic 
+			  Model. Each model was implemented from scratch using TensorFlow 2 and trained on Google Colab with GPU acceleration to ensure 
+			  faster convergence and efficient experimentation. <br>
+			  <br>The Fashion MNIST dataset, consisting of 28×28 grayscale images of 
+			  clothing items across 10 categories (such as T-shirts, trousers, and shoes), serves as an ideal testbed due to its balance
+			  between complexity and simplicity. Each image was normalized and scaled to fit the input requirements of the generative 
+			  models.<br>
+			  <br>The first model was a <b style="color: black;">Generative Adversarial Network (GAN)</b> with dense layers, where a 
+			  generator and discriminator compete in a zero-sum game. 
+			  The vanilla GAN could generate plausible images after training, but the results were not the best. The training was stable and 
+			  the model did not suffer 'mode collapse'. Mode collapse is a common GAN failure where the generator produces limited or identical 
+			  outputs, ignoring the variety in the training data.<br>
+			  <br>A <b style="color: black;">Deep Convolutional GAN (DCGAN)</b> was implemented next. By replacing fully 
+			  connected layers with convolutional and transposed convolutional layers, DCGAN significantly improved the sharpness and 
+			  structure of the generated images. Batch normalization and LeakyReLU activations needed to stabilize training. In this architecture
+			  the encoutered problem at training was that the discriminator was becoming more powerful than the generator soon. To address this, we 
+			  periodically reverted the discriminator’s weights to those from earlier epochs, preventing it from overpowering the generator. This strategy 
+			  helped rebalance the adversarial training and led to improved image quality.<br>
+			  <br>After that, a <b style="color: black;">Variational Autoencoder (VAE)</b> was developed. Unlike GANs, VAEs use a probabilistic encoder-decoder 
+			  framework, learning to encode images into a latent distribution and then sample from it to reconstruct images. Though the 
+			  images generated by VAEs are typically blurrier than those from GANs, the model offered stable  and faster training along with a well-structured 
+			  latent space that captures meaningful features of the data.<br>
+			  <br>The final model explored was a <b style="color: black;">Denoising Diffusion Probabilistic Model (DDPM)</b>, inspired by recent advancements 
+			  in generative modeling. Diffusion models work by gradually adding noise to data and learning to reverse this process to generate realistic 
+			  samples. Despite requiring longer training and especially longer inference times, the diffusion model produced the highest quality and most 
+			  detailed fashion images, outperforming the other architectures in visual fidelity and diversity.<br>
+			  <br>Each model's performance was qualitatively assessed through generated sample images. The results demonstrated clear trade-offs 
+			  between training stability, image quality and diversity, and computational cost across the four models. <br>
+			  
+			  <br><b style="color: black;">At the end of the page an evaluation of the four models is presented.<br></b>
+
+				
+			  </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+		<div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Tools / Python libraries</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <p><img src="./static/assets/images/tf2_pic.jpg" class="img-responsive" alt=""></p>
+              </div>
+              <div class="col-md-8">
+
+              <p style="text-align: justify; font-size: 18px;">The main framework used is Tensorflow version 2.18. 
+			  Other libraries used in the project: Pandas, Numpy, os, matplotlib, random.</p>
+              <ul>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">TensorFlow</b> is a deep learning framework used 
+			  for building, training, and deploying machine learning models, especially neural networks.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Pandas</b> is a data analysis and manipulation library 
+			  that provides flexible data structures like DataFrames for handling structured data.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">NumPy</b> is a fundamental package for scientific 
+			  computing with Python, offering support for efficient numerical operations on large arrays and 
+			  matrices.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">os</b> is a built-in Python module that provides 
+			  functions to interact with the operating system, such as file and directory management.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">matplotlib</b> is a plotting library used for creating 
+			  static, animated, and interactive visualizations in Python.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">random</b> is a built-in module for generating 
+			  random numbers and performing random operations such as shuffling or sampling. In this project, it is specifically used to 
+			  generate random noise vectors</p></li>
+			  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Progression of image generation during model training</h2>
+
+
+  <div class="gif-container">
+				
+			<div class="gif-box">
+			  <div class="gif-wrapper">
+				<img
+				  src="static/assets/gifs/gan_epoch_001.png"
+				  data-static="static/assets/gifs/gan_epoch_001.png"
+				  data-gif="static/assets/gifs/gan_output.gif"
+				  class="click-to-play"
+				  data-duration="34500"  
+				  alt="GAN GIF">
+				<div class="play-icon">&#9658;</div>
+				<div class="restart-icon" style="display: none;">&#10226;</div>
+			  </div>
+			  <p class="gif-title">GAN (50 epochs)</p>
+			</div>
+
+
+			<div class="gif-box">
+			  <div class="gif-wrapper">
+				<img
+				  src="static/assets/gifs/dcgan_epoch_001.png"
+				  data-static="static/assets/gifs/dcgan_epoch_001.png"
+				  data-gif="static/assets/gifs/dcgan_output.gif"
+				  class="click-to-play"
+				  data-duration="40000"  
+				  alt="DCGAN GIF">
+				<div class="play-icon">&#9658;</div>
+				<div class="restart-icon" style="display: none;">&#10226;</div>
+			  </div>
+			  <p class="gif-title">DCGAN (62 epochs)</p>
+			</div>
+
+	
+	
+			<div class="gif-box">
+			  <div class="gif-wrapper">
+				<img
+				  src="static/assets/gifs/vae_epoch_001.png"
+				  data-static="static/assets/gifs/vae_epoch_001.png"
+				  data-gif="static/assets/gifs/vae_output.gif"
+				  class="click-to-play"
+				  data-duration="54500"  
+				  alt="VAE GIF">
+				<div class="play-icon">&#9658;</div>
+				<div class="restart-icon" style="display: none;">&#10226;</div>
+			  </div>
+			  <p class="gif-title">VAE (100 epochs)</p>
+			</div>
+	
+	
+			<div class="gif-box">
+			  <div class="gif-wrapper">
+				<img
+				  src="static/assets/gifs/diffusion_epoch_001.png"
+				  data-static="static/assets/gifs/diffusion_epoch_001.png"
+				  data-gif="static/assets/gifs/diffusion_output.gif"
+				  class="click-to-play"
+				  data-duration="69500"  
+				  alt="DIFFUSION GIF">
+				<div class="play-icon">&#9658;</div>
+				<div class="restart-icon" style="display: none;">&#10226;</div>
+			  </div>
+			  <p class="gif-title">Diffusion (127 epochs)</p>
+			</div>
+
+  </div>
+ </div>
+              
+            </div>
+          </div>
+        </div>
+		
+		
+		
+
+<div class="card">
+  <div class="card-block">
+    <h2 style="margin-bottom: 10px; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Original images</h2>
+   <div class="row">
+
+   
+   <div class="center-original">
+     <!-- ORIGINAL -->
+  <div class="original-frame" id="original-frame">
+    <img id="original-image" class="model-image" src="" alt="Original image">
+    <div class="nav-buttons">
+      <button class="prev-button"><</button>
+	    <span class="image-counter"></span>
+      <button class="next-button">></button>
+    </div>
+    <div class="model-title">Original images</div>
+  </div>
+   </div>
+      
+  
+  
+   <h2 style="margin-bottom: 10px; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Generated samples</h2>
+   
+   <div class="model-frame-container">
+  <!-- GAN -->
+  <div class="model-frame" id="gan-frame">
+    <img id="gan-image" class="model-image" src="" alt="GAN generated">
+    <div class="nav-buttons">
+      <button class="prev-button"><</button>
+	    <span class="image-counter"></span>
+      <button class="next-button">></button>
+    </div>
+    <div class="model-title">GAN</div>
+  </div>
+
+  <!-- DCGAN -->
+  <div class="model-frame" id="dcgan-frame">
+    <img id="dcgan-image" class="model-image" src="" alt="DCGAN generated">
+    <div class="nav-buttons">
+      <button class="prev-button"><</button>
+	    <span class="image-counter"></span>
+      <button class="next-button">></button>
+    </div>
+    <div class="model-title">DCGAN</div>
+  </div>
+
+  <!-- VAE -->
+  <div class="model-frame" id="vae-frame">
+    <img id="vae-image" class="model-image" src="" alt="VAE generated">
+    <div class="nav-buttons">
+      <button class="prev-button"><</button>
+	    <span class="image-counter"></span>
+      <button class="next-button">></button>
+    </div>
+    <div class="model-title">VAE</div>
+  </div>
+
+  <!-- Diffusion -->
+  <div class="model-frame" id="diffusion-frame">
+    <img id="diffusion-image" class="model-image" src="" alt="Diffusion generated">
+    <div class="nav-buttons">
+      <button class="prev-button"><</button>
+	    <span class="image-counter"></span>
+      <button class="next-button">></button>
+    </div>
+    <div class="model-title">Diffusion</div>
+  </div>
+</div>
+  </div>
+</div>
+	</div>	
+		
+		
+		
+		
+		  <div class="card">
+          <div class="card-block">
+            <h2 style="margin-bottom: 10px; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Evaluation of the four models</h2>
+            <div class="row">
+	
+			<div style="max-width: 650px; border: 2px solid #333; border-radius: 8px; padding: 15px; margin: 20px 0; background-color: #f9f9f9;">
+			    <b style="color: black; font-size: 18px;"><u>GAN</b></u>
+				<ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px; font-size: 18px;">
+				<li><span style="font-size: 18px;"><b>Training Speed:</b> Fast to train per epoch.</span>
+				<li><span style="font-size: 18px;"><b>Training Stability:</b> Moderate; training was stable in this project but GANs are often 
+				sensitive to hyperparameters.</span>
+				<li><span style="font-size: 18px;"><b>Image Quality:</b> Acceptable; images were plausible but lacked fine detail.</span>
+				<li><span style="font-size: 18px;"><b>Image Diversity:</b> Limited; prone to repetition without major mode collapse.</span>
+				<li><span style="font-size: 18px;"><b>Computational Cost:</b> Low; fully connected architecture is lightweight.</span>
+				</ul>
+				<p style="margin-top: 14px; font-size: 18px;"><b>➤➤ Summary:</b> A simple and fast model that can generate basic images, but 
+				struggles with detail and diversity.</p>
+			</div>
+			  
+			<div style="max-width: 650px; border: 2px solid #333; border-radius: 8px; padding: 15px; margin: 20px 0; background-color: #f9f9f9;">
+				<b style="color: black; font-size: 18px;"><u>DCGAN</b></u>
+				<ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px; font-size: 18px;">
+				<li><span style="font-size: 18px;"><b>Training Speed:</b>  Slower than vanilla GAN due to convolutional layers.</span>
+				<li><span style="font-size: 18px;"><b>Training Stability:</b>  Less stable; the discriminator tended to overpower the generator.</span>
+				<li><span style="font-size: 18px;"><b>Image Quality:</b>  Improved sharpness and structure over vanilla GAN.</span>
+				<li><span style="font-size: 18px;"><b>Image Diversity:</b>  Better than vanilla GAN.</span>
+				<li><span style="font-size: 18px;"><b>Computational Cost:</b>  Moderate; more complex due to convolutional operations.</span>
+				</ul>
+				<p style="margin-top: 14px; font-size: 18px;"><b>➤➤ Summary:</b> A more powerful GAN variant producing higher-quality images, 
+				but requiring careful balancing to ensure stable training.</p>
+			</div>
+				
+			<div style="max-width: 650px;  border: 2px solid #333; border-radius: 8px; padding: 15px; margin: 20px 0; background-color: #f9f9f9;">
+				<b style="color: black; font-size: 18px;"><u>VAE</b></u><br>
+				<ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px; font-size: 18px;">
+				<li><span style="font-size: 18px;"><b>Training Speed:</b>  Fast; converges quickly and reliably.</span>
+				<li><span style="font-size: 18px;"><b>Training Stability:</b>  Very stable due to its probabilistic framework.</span>
+				<li><span style="font-size: 18px;"><b>Image Quality:</b>  Comparable withn GANs; images are often blurrier.</span>
+				<li><span style="font-size: 18px;"><b>Image Diversity:</b>  Good; covers more modes of the data distribution.</span>
+				<li><span style="font-size: 18px;"><b>Computational Cost:</b>  Low to moderate.</span>
+				</ul>
+				<p style="margin-top: 14px; font-size: 18px;"><b>➤➤ Summary:</b> A stable and efficient generative model with good data coverage, 
+				though image quality is usually softer.</p>
+			</div>
+					
+			<div style="max-width: 650px; border: 2px solid #333; border-radius: 8px; padding: 15px; margin: 20px 0; background-color: #f9f9f9;">
+				<b style="color: black; font-size: 18px;"><u>Diffusion Model</b></u><br>
+				<ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px; font-size: 18px;">
+				<li><span style="font-size: 18px;"><b>Training Speed:</b>  Very slow; requires many steps and long training times.</span>
+				<li><span style="font-size: 18px;"><b>Training Stability:</b>  Very stable; training is predictable and robust.</span>
+				<li><span style="font-size: 18px;"><b>Image Quality:</b>  High; often surpasses GANs in detail and realism.</span>
+				<li><span style="font-size: 18px;"><b>Image Diversity:</b>  Good; captures wide variation in the data.</span>
+				<li><span style="font-size: 18px;"><b>Computational Cost:</b>  High; both training and sampling are resource-intensive.</span>
+				</ul>
+				<p style="margin-top: 14px; font-size: 18px;"><b>➤➤ Summary:</b> The most powerful model in terms of image quality and diversity, 
+				but with significant computational demands.	</p>
+			</div>
+			  
+          </div>
+        </div>
+		</div>
+		
+		
+		
+		
+		 <div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Python code</h2>
+			<h3 class="h5" ><a href="./project3_thecode.html" target="_blank" title="">The code</a></h3>
+          </div>
+
+        </div>
+		
+		
+		
+		
+		
+		
+        
+        <div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Project downloads</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="language-experience">
+                  <a href="./static/assets/downloads/Fashion_MNIST_project.ipynb" download="Fashion_MNIST_project.ipynb"><h3 class="h5">Fashion_MNIST_project </a><small>(ipynb file)</small></h3>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="language-experience">
+                  <h3 class="h5">csv files  <small>(zipped csv files)</small></h3>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+       
+     </div>
+   </div>
+ </div>
+
+</main>
+<footer class="footer-container white-text-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p><img src="./static/assets/images/mashup-icon.svg" alt=""></p>
+        
+        <p>©All right reserved. Design <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+        <p>
+          <a class="fa-icon fa-icon-2x" href="https://facebook.com/" title="">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://twitter.com/" title="">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://dribbble.com/" title="">
+            <i class="fa fa-dribbble"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://www.linkedin.com/" title="">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://vimeo.com/" title="">
+            <i class="fa fa-vimeo"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     scrollRevelation('.card');
+  });
+</script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+-->
+<script src="./static/prism.js"></script>
+<script type="text/javascript" src="./static/main.bc58148c.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.click-to-play').forEach(img => {
+    const playIcon = img.parentElement.querySelector('.play-icon');
+    const restartIcon = img.parentElement.querySelector('.restart-icon');
+    const staticSrc = img.dataset.static || img.src;
+    const gifSrc = img.dataset.gif;
+    const gifDuration = parseInt(img.dataset.duration) || 3000;
+
+    let isPlaying = false;
+
+    // Click to play
+    img.addEventListener('click', () => {
+      if (isPlaying) return;
+      isPlaying = true;
+
+      img.src = gifSrc + '?t=' + Date.now(); // cache bust
+      playIcon.style.display = 'none';
+      restartIcon.style.display = 'none';
+
+      setTimeout(() => {
+        restartIcon.style.display = 'block';
+        isPlaying = false;
+      }, gifDuration);
+    });
+
+    // Restart button click
+    restartIcon.addEventListener('click', () => {
+      if (isPlaying) return;
+      isPlaying = true;
+
+      img.src = gifSrc + '?t=' + Date.now(); // cache bust again
+      restartIcon.style.display = 'none';
+
+      setTimeout(() => {
+        restartIcon.style.display = 'block';
+        isPlaying = false;
+      }, gifDuration);
+    });
+  });
+});
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const models = ["original", "gan", "dcgan", "vae", "diffusion"];
+    const totalImages = {
+      original: 0,
+	  gan: 0,
+      dcgan: 0,
+      vae: 0,
+      diffusion: 0
+    };
+
+    // Estimate how many images exist by trying to load images up to a maximum
+    const maxCheck = 20; // check up to 20 images
+    let imagesLoaded = 0;
+
+    models.forEach(model => {
+      let count = 0;
+      let testImage = new Image();
+
+      const checkNext = (i) => {
+        testImage = new Image();
+        testImage.onload = () => {
+          count++;
+          checkNext(i + 1);
+        };
+        testImage.onerror = () => {
+          totalImages[model] = count;
+          initializeModel(model);
+        };
+        testImage.src = `/static/assets/images/${model}_images/${model}${i}.png`;
+      };
+
+      checkNext(1);
+    });
+
+    function initializeModel(modelName) {
+      const imageElement = document.getElementById(`${modelName}-image`);
+      const prevBtn = document.querySelector(`#${modelName}-frame .prev-button`);
+      const nextBtn = document.querySelector(`#${modelName}-frame .next-button`);
+      const counter = document.querySelector(`#${modelName}-frame .image-counter`);
+
+      let index = 1;
+      const max = totalImages[modelName];
+
+      function update() {
+        imageElement.src = `/static/assets/images/${modelName}_images/${modelName}${index}.png`;
+        counter.textContent = `${index}/${max}`;
+        prevBtn.disabled = index === 1;
+        nextBtn.disabled = index === max;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (index > 1) {
+          index--;
+          update();
+        }
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (index < max) {
+          index++;
+          update();
+        }
+      });
+
+      update(); // initial display
+    }
+  });
+</script>
+
+
+
+
+	       </body>
+
+</html>

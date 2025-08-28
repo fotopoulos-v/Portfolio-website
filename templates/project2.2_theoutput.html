@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
   <link href="./static/assets/favicon.ico" rel="icon">
   <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/python2.png')}}">
-  <link rel="stylesheet" href="./static/prism.css">
+  <link rel="stylesheet" href="./static/css/prism.css">
   
   <title>The output of a run of the code</title>  
 
@@ -72,7 +72,7 @@
           <div class="card-block"; style="max-width: 98%; padding: 10px; margin: 0 auto; overflow: hidden; text-align: justify;">
             <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">The output</h2>
 			<pre>
-			<p style="text-align: justify; font-size: 19px; color: black; word-wrap: break-word;">Number of survivors: 500 of 1309
+			<p style="text-align: justify; font-size: 18px; color: black; word-wrap: break-word;">Number of survivors: 500 of 1309
 Number of deceased: 809 of 1309
 Number of women: 466 of 1309
 Number of men: 843 of 1309
@@ -92,15 +92,15 @@ Proportion (%) of men with fare above 100 dollars that survived: 31.25</p>
 	<img src="./static/assets/images/fare.png" alt="Image 1" style="width: 49%; height: auto;">
 </div>
 
-<p style="text-align: justify; font-size: 19px; color: black; word-wrap: break-word;">
-          <b>Algorithm    Accuracy %</b>
-       Random Forest      81.58
-       Decision Tree      81.56
-                 SVM      81.48
-      Neural Network      79.82
-                K-NN      79.68
- Logistic Regression      78.22
-         Naive Bayes      78.01
+<p style="text-align: justify; font-size: 18px; color: black; word-wrap: break-word; ">
+          <b>Algorithm      Accuracy %</b>
+       Random Forest     81.58
+       Decision Tree     81.56
+                 SVM     81.48
+      Neural Network     79.82
+                K-NN     79.68
+ Logistic Regression     78.22
+         Naive Bayes     78.01
 
 
           <b>Algorithm 	 AUC_score %</b>
@@ -113,14 +113,14 @@ Proportion (%) of men with fare above 100 dollars that survived: 31.25</p>
  Logistic Regression     76.37
 
 
-         <b> Algorithm 	Recall %</b>
-                 SVM  	71.88
-       Decision Tree  	71.70
- Logistic Regression  	71.60
-         Naive Bayes  	70.10
-       Random Forest  	68.43
-                K-NN  	67.68
-      Neural Network  	61.96
+         <b> Algorithm 	 Recall %</b>
+                 SVM  	 71.88
+       Decision Tree  	 71.70
+ Logistic Regression  	 71.60
+         Naive Bayes  	 70.10
+       Random Forest  	 68.43
+                K-NN  	 67.68
+      Neural Network  	 61.96
 
 
       <b>   Algorithm 	 Precision %</b>
@@ -133,15 +133,16 @@ Proportion (%) of men with fare above 100 dollars that survived: 31.25</p>
          Naive Bayes     71.90
 
 
-       <b>  Algorithm 	F1_score %</b>
-       Decision Tree    74.85
-                 SVM    74.80
-       Random Forest    73.99
- Logistic Regression    72.28
-                K-NN    71.88
-         Naive Bayes    70.99
-      Neural Network    70.19
+       <b>  Algorithm 	 F1_score %</b>
+       Decision Tree     74.85
+                 SVM     74.80
+       Random Forest     73.99
+ Logistic Regression     72.28
+                K-NN     71.88
+         Naive Bayes     70.99
+      Neural Network     70.19
 	  
+
 	  
 <b>CONCLUSION</b>
 Which measure should we take into account to make our choice for the most suitable
@@ -162,7 +163,7 @@ be particularly distressing and misleading.
 In our run of the code the best results for Precision were:
 1) Neural Network (80.95%)
 2) Random Forest (80.54%)
-As we see the results are very close for most of the classifiers. If we had to choose one, 
+As we see the results are very close for most of the classifiers. If I had to choose one, 
 my choice would be the Artificial Neural Network classifier. Even though it did not have the
 best overall accuracy, it obtained the best precision score (in our specific run of the code) 
 which is the most suited measure in our scenario.
