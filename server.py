@@ -74,6 +74,22 @@ def submit_form():
             return f"An error occurred: {e}"
     else:
         return "Something went wrong"
+    
+
+
+from flask import send_file
+
+@app.route('/download_database')
+def download_database():
+    # Optional: simple password for security
+    password = request.args.get('password')
+    if password != "panatha1":
+        return "Unauthorized", 401
+    
+    return send_file('database.csv', mimetype='text/csv', as_attachment=True)
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
