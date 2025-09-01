@@ -76,25 +76,6 @@ def submit_form():
         return "Something went wrong"
     
 
-@app.route('/download_database')
-def download_database():
-    import os
-    # Optional: simple password for security
-    password = request.args.get('password')
-    if password != "panatha1":
-        return "Unauthorized", 401
-
-    # Absolute path to database.csv
-    file_path = os.path.join(os.path.dirname(__file__), 'database.csv')
-
-    if not os.path.exists(file_path):
-        return "File not found", 404
-
-    return send_file(file_path, mimetype='text/csv', as_attachment=True)
-
-
-
-
-
+    
 if __name__ == '__main__':
     app.run(debug=True)
