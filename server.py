@@ -1,7 +1,7 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from flask import Flask, render_template, url_for, request, redirect, send_file
+from flask import Flask, render_template, url_for, request, redirect, send_file, send_from_directory
 import datetime
 import csv
 import os
@@ -75,6 +75,16 @@ def submit_form():
     else:
         return "Something went wrong"
     
+
+@app.route('/download/<path:filename>')
+def download(filename):
+    return send_from_directory(
+        directory='static/assets/downloads',
+        path=filename,
+        as_attachment=True,
+        download_name="requirements.txt"  # this sets the downloaded filename
+    )
+
 
     
 if __name__ == '__main__':

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
+  <link href="./static/assets/images/timeseries_favicon.png" rel="icon">
+  <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/timeseries_favicon.png')}}">
+  <link rel="stylesheet" href="./static/css/prism.css">
+  
+  <title>Time Series Forecasting</title>  
+
+  <style>
+    .home-button {
+      position: fixed; /* Make the button fixed */
+      top: 3px; /* Adjust the top position as needed */
+      left: 3px; /* Adjust the left position as needed */
+	  display: inline-block;
+      padding: 8px 16px;
+      background-color: #0074d9; /* Button color */
+	  font-size: 18px;
+	  font-weight: bold; /* Make the text bold */
+	  font-family: Arial, sans-serif; /* Change font type */
+      color: #fff; /* Text color */
+      text-decoration: none; /* Remove underlines from links */
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+	  z-index: 999; /* Set a high z-index value to ensure it's on top */
+    }
+
+    .home-button:hover {
+      background-color: #0056b3; /* Button color on hover */
+	  color: #BBE0FC; /* Text color on hover */
+	  text-decoration: none; /* Remove underlines from links */
+    }
+  </style>
+
+
+<link href="./static/main.d8e0d294.css" rel="stylesheet"></head>
+
+
+<style>
+	.gif-container {
+	  display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	  gap: 10px;
+	  max-width: 100%; /* changed from 95% to 100% */
+	  padding: 0 10px;   /* small horizontal padding */
+	  margin: 40px auto;
+	}
+
+    .gif-box {
+      text-align: center;
+    }
+
+    .gif-box img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #aaa;
+      border-radius: 12px;
+    }
+
+    .gif-title {
+      margin-top: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+
+
+<body class="">
+<a href="/" class="home-button">Home</a>
+<!-- Add your content of header -->
+<div class="background-color-layer" style="background-image: url('/static/assets/images/time_series4.png')"
+></div>
+<main class="content-wrapper">
+  <header class="white-text-container section-container">
+    <div class="text-center">
+      <h1>Time Series Forecasting <br><span style="font-size: 42px;">for natural gas consumption</span></h1>
+  
+    </div>
+  </header>
+
+
+
+<!-- Add your site or app content here -->
+ 
+ <div class="container">
+   <div class="row">
+     <div class="col-xs-12">
+
+        <div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">About the project</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <p><img src="./static/assets/images/time_series2small.png" class="img-responsive" alt=""></p>
+              </div>
+              <div class="col-md-8">
+              <p style="margin-bottom: 0px; color: #11329E;"><b><u><span style="font-size: 18px;">Summary:</span></u></b></p>
+			  <p style="text-align: justify; font-size: 18px;">This project focuses on forecasting natural gas demand in Greece for the 12-month period
+			  from August 2024 to July 2025. Using historical consumption and temperature data, multiple forecasting models are developed and compared 
+			  to evaluate their ability to capture seasonal trends, weather-driven fluctuations, and long-term dependencies in energy usage.</p><br>
+			  <p style="margin-bottom: 0px; color: #11329E;"><b><u><span style="font-size: 18px;">Tools used:</span></u></b></p>
+			  <p style="text-align: justify; font-size: 18px;">The models were implemented in Python, using key libraries such as pandas, NumPy, 
+			  and scikit-learn for data preprocessing and feature engineering. Time series models were developed using statsmodels, XGBoost and Tensorflow 2.
+			  Weather data was retrieved via the Meteostat API and aggregated into monthly averages for integration with consumption data.</p><br>
+              <p style="margin-bottom: 0px; color: #11329E;"><b><u><span style="font-size: 18px;">Project details:</span></u></b></p>
+			  <p style="text-align: justify; font-size: 18px;"> This project explores a range of forecasting approaches, spanning traditional statistical 
+			  models, machine learning methods, and advanced deep learning architectures:
+
+			<br><b style="color: black;">➤ SARIMA</b> (Seasonal Autoregressive Integrated Moving Average): A statistical baseline capable of modeling autocorrelation, trend, and seasonality in natural gas demand.
+			<br><b style="color: black;">➤ XGBoost</b>: A powerful ensemble method applied to engineered features such as lagged consumption values and temperature data.
+			<br><b style="color: black;">➤ MLP</b> (Multi-Layer Perceptron): A feedforward neural network that captures nonlinear relationships between past consumption, temperature, and future demand.
+			<br><b style="color: black;">➤ RNN</b> (Recurrent Neural Network): Designed to model sequential data, capturing short-term dependencies in gas consumption trends.
+			<br><b style="color: black;">➤ LSTM</b> (Long Short-Term Memory): A more advanced recurrent model capable of learning long-term dependencies and avoiding vanishing gradient issues.
+			<br><b style="color: black;">➤ GRU</b> (Gated Recurrent Unit): A streamlined alternative to LSTM with fewer parameters, offering a balance between efficiency and performance.
+			<br><b style="color: black;">➤ 1D-CNN</b> (1D - Convolutional Neural Network): Applied along the time axis to extract local temporal features and short-term fluctuations in demand.
+			  
+
+			  <br><br>
+			  The dataset includes historical monthly natural gas consumption in Greece (2008–2025) and was obtained from <b style="color: black;">
+			  https://ec.europa.eu/eurostat/</b>.
+			  Monthly average air temperatures were derived from daily records using the <b style="color: black;">Meteostat API</b>. The combined dataset 
+			  enables both seasonal and weather-related effects to be incorporated into the models. <br>
+			  
+			  <br><b style="color: black;">The study concludes with the creation of an interactive plot that visualizes actual consumption values 
+			  alongside the forecasts, after which the performance of each model is evaluated..</b><br>
+
+			  
+			 
+
+				
+			  </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+		<div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Tools / Python libraries</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <p><img src="./static/assets/images/plotly_img.png" class="img-responsive" alt=""></p>
+              </div>
+              <div class="col-md-8">
+
+              <p style="text-align: justify; font-size: 18px;">For this project the following libraries-frameworks were used:</p>
+              <ul>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Pandas</b> - data preprocessing and manipulation.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">NumPy</b> - numerical computations and array operations.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">scikit-learn</b> - feature engineering and machine learning utilities, 
+			  including the MLPRegressor from sklearn.neural_network for fully connected neural network forecasting.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">statsmodels</b> - implementation of SARIMA model (
+			  traditional time series model)</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">XGBoost</b> - implementation of gradient boosting decision 
+			  trees for tabular forecasting with lagged features and temperature data.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">TensorFlow</b> - building and training deep learning 
+			  models (RNN, LSTM, GRU, 1D-CNN)</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Meteostat API</b> - used for retrieving daily weather data,
+			  aggregated into monthly averages for integration with consumption data.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">matplotlib</b> - used for creating static visualizations of 
+			  actual and predicted values.</p></li>
+			  <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">plotly</b> used for building an interactive plot to compare 
+			  all forecasts with actual consumption values.</p></li>
+
+			  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        
+				<div class="card">
+			  <iframe src="static/assets/plots/interactive_plot.html"
+					  width="100%"
+					  height="600"
+					  frameborder="0"
+					  scrolling="no">
+			  </iframe>
+			</div>
+		
+		
+		
+
+		
+		
+		
+		  <div class="card">
+          <div class="card-block">
+            <h2 style="margin-bottom: 10px; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Model evaluation</h2>
+            <div class="row">
+	
+			<div style="max-width: 650px; border: 2px solid #333; border-radius: 8px; padding: 15px; margin: 20px 0; background-color: #f9f9f9;">
+			    <b style="color: black; font-size: 18px;"><u>Error Metrics: MAE vs. RMSE</b></u>
+				<ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px; font-size: 18px;">
+				<li><span style="font-size: 18px;"><b>MAE (Mean Absolute Error):</b>
+					<ul style="margin-top: 4px; margin-bottom: 4px; padding-left: 20px; font-size: 18px;">
+						<li>Treats all errors equally.</li>
+						<li>More robust to outliers.</li>
+						<li>Useful when we care about the average magnitude of the forecasting error.</li></span></ul></ul>
+				<ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px; font-size: 18px;">					
+				<li><span style="font-size: 18px;"><b>RMSE (Root Mean Squared Error):</b> 
+					<ul style="margin-top: 4px; margin-bottom: 4px; padding-left: 20px; font-size: 18px;">
+						<li>Penalizes larger errors more heavily because of squaring.</li>
+						<li>More sensitive to outliers.</li>
+						<li>Preferred when large deviations are especially costly (e.g., underestimating winter peak demand).</li></span></ul>
+				</ul>
+				<p style="margin-top: 14px; font-size: 18px;">➡ In energy consumption forecasting, RMSE is often prioritized, as peak-period accuracy is critical. However, MAE remains valuable for interpreting the typical average error.</p>
+			</div>
+			  
+			<div style="max-width: 650px; border: 2px solid #333; border-radius: 8px; padding: 15px; margin: 20px 0; background-color: #f9f9f9;">
+				<b style="color: black; font-size: 18px;"><u>Model Performance</b></u>
+				<ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px; font-size: 18px;">
+				<li><span style="font-size: 18px;"><b>Best overall:</b>  The LSTM model produced the most consistent forecasts, effectively capturing 
+				temporal dependencies.</span>
+				<li><span style="font-size: 18px;"><b>Next best:</b>  GRU followed closely, performing well with slightly faster training compared to 
+				LSTM, making it a good balance between accuracy and efficiency. </span>
+				<li><span style="font-size: 18px;"><b>Traditional model (SARIMA):</b>  provided stable forecasts even without temperature as an input.</span>
+				<li><span style="font-size: 18px;"><b>Tree-based model (XGBoost):</b>  performed the weakest. With only 211 rows of data, it struggled 
+				to generalize, as tree-based models typically need larger datasets. </span>
+				<li><span style="font-size: 18px;"><b>CNN & RNN:</b>  achieved relatively good results. Both RNN and CNN captured sequential patterns 
+				but both were outperformed by LSTM/GRU. CNN in particular requires larger datasets to fully leverage its strengths.  </span>
+				</ul>
+
+			</div>
+				
+			<div style="max-width: 650px;  border: 2px solid #333; border-radius: 8px; padding: 15px; margin: 20px 0; background-color: #f9f9f9;">
+				<b style="color: black; font-size: 18px;"><u>Training Times</b></u><br>
+				<ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px; font-size: 18px;">
+				<li><span style="font-size: 18px;"><b>Fastest - SARIMA:</b>  The SARIMA model trained almost instantly since it relies on fitting 
+				relatively few parameters. Its simplicity makes it computationally lightweight, ideal for quick baseline forecasts.</span>
+				<li><span style="font-size: 18px;"><b>Fast - XGBoost:</b>  XGBoost also trained efficiently, even with engineered lag and temperature 
+				features. Gradient boosting decision trees scale well on small to medium-sized tabular datasets, making it a strong option when fast 
+				experimentation is needed.</span>
+				<li><span style="font-size: 18px;"><b>Most demanding – Neural Networks:</b>  Deep learning models (MLP, RNN, CNN, GRU, and LSTM) 
+				required significantly longer training times. Among them, LSTM was the most computationally expensive, as its gating mechanisms and 
+				ability to capture long-term dependencies come at the cost of higher complexity and slower convergence. Despite this, the extra 
+				training time was justified by its superior forecasting accuracy.</span>
+			</div>
+					
+			<div style="max-width: 650px; border: 2px solid #333; border-radius: 8px; padding: 15px; margin: 20px 0; background-color: #f9f9f9;">
+				<b style="color: black; font-size: 18px;"><u>Limitations</b></u><br>
+				<ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px; font-size: 18px;">
+				<li><span style="font-size: 18px;"> None of the models successfully captured the extreme peak consumption in 
+				January and February 2025. Despite incorporating temperature (average 8.7 °C in January, 8.2 °C in February), demand was underestimated.
+				This suggests that temperature and historical consumption alone may not be sufficient. Additional explanatory variables (e.g., 
+				socioeconomic factors, policy changes, or unexpected demand shocks) could possibly help to better capture such anomalies.</span>
+
+			</div>
+			  
+          </div>
+        </div>
+		</div>
+		
+		
+		
+		
+		 <div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Python code</h2>
+			<h3 class="h5" ><a href="./project4_thecode.html" target="_blank" title="">The code</a></h3>
+          </div>
+
+        </div>
+		
+
+		
+		
+        
+        <div class="card">
+          <div class="card-block">
+            <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Project downloads</h2>
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <div class="language-experience">
+				<h3 class="h5">
+                  <a href="./static/assets/downloads/NaturalGasConsumptionForecasting.ipynb" download="NaturalGasConsumptionForecasting.ipynb">NaturalGasConsumptionForecasting </a><small>(ipynb file)</small></h3>
+                </div>
+              </div>
+			  <div class="col-md-4 text-center">
+                <div class="language-experience">
+				<h3 class="h5">
+                  <a href="./static/assets/downloads/nrg_cb_gasm.xlsx" download="nrg_cb_gasm.xlsx">dataset</a><br><small>(xlsx file)</small></h3>
+                </div>
+            </div>
+			
+			<div class="col-md-4 text-center">
+                <div class="language-experience">
+				<h3 class="h5">
+                   <a href="{{ url_for('download', filename='project4_requirements.txt') }}">requirements.txt</a><br><small>(txt file)</small></h3>
+                </div>
+            </div>		
+			
+          </div>
+        </div>
+
+
+       
+     </div>
+   </div>
+ </div>
+
+</main>
+<footer class="footer-container white-text-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p><img src="./static/assets/images/mashup-icon.svg" alt=""></p>
+        
+        <p>©All right reserved. Design <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+        <p>
+          <a class="fa-icon fa-icon-2x" href="https://facebook.com/" title="">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://twitter.com/" title="">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://dribbble.com/" title="">
+            <i class="fa fa-dribbble"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://www.linkedin.com/" title="">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://vimeo.com/" title="">
+            <i class="fa fa-vimeo"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     scrollRevelation('.card');
+  });
+</script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+-->
+<script src="./static/prism.js"></script>
+<script type="text/javascript" src="./static/main.bc58148c.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.click-to-play').forEach(img => {
+    const playIcon = img.parentElement.querySelector('.play-icon');
+    const restartIcon = img.parentElement.querySelector('.restart-icon');
+    const staticSrc = img.dataset.static || img.src;
+    const gifSrc = img.dataset.gif;
+    const gifDuration = parseInt(img.dataset.duration) || 3000;
+
+    let isPlaying = false;
+
+    // Click to play
+    img.addEventListener('click', () => {
+      if (isPlaying) return;
+      isPlaying = true;
+
+      img.src = gifSrc + '?t=' + Date.now(); // cache bust
+      playIcon.style.display = 'none';
+      restartIcon.style.display = 'none';
+
+      setTimeout(() => {
+        restartIcon.style.display = 'block';
+        isPlaying = false;
+      }, gifDuration);
+    });
+
+    // Restart button click
+    restartIcon.addEventListener('click', () => {
+      if (isPlaying) return;
+      isPlaying = true;
+
+      img.src = gifSrc + '?t=' + Date.now(); // cache bust again
+      restartIcon.style.display = 'none';
+
+      setTimeout(() => {
+        restartIcon.style.display = 'block';
+        isPlaying = false;
+      }, gifDuration);
+    });
+  });
+});
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const models = ["original", "gan", "dcgan", "vae", "diffusion"];
+    const totalImages = {
+      original: 0,
+	  gan: 0,
+      dcgan: 0,
+      vae: 0,
+      diffusion: 0
+    };
+
+    // Estimate how many images exist by trying to load images up to a maximum
+    const maxCheck = 20; // check up to 20 images
+    let imagesLoaded = 0;
+
+    models.forEach(model => {
+      let count = 0;
+      let testImage = new Image();
+
+      const checkNext = (i) => {
+        testImage = new Image();
+        testImage.onload = () => {
+          count++;
+          checkNext(i + 1);
+        };
+        testImage.onerror = () => {
+          totalImages[model] = count;
+          initializeModel(model);
+        };
+        testImage.src = `/static/assets/images/${model}_images/${model}${i}.png`;
+      };
+
+      checkNext(1);
+    });
+
+    function initializeModel(modelName) {
+      const imageElement = document.getElementById(`${modelName}-image`);
+      const prevBtn = document.querySelector(`#${modelName}-frame .prev-button`);
+      const nextBtn = document.querySelector(`#${modelName}-frame .next-button`);
+      const counter = document.querySelector(`#${modelName}-frame .image-counter`);
+
+      let index = 1;
+      const max = totalImages[modelName];
+
+      function update() {
+        imageElement.src = `/static/assets/images/${modelName}_images/${modelName}${index}.png`;
+        counter.textContent = `${index}/${max}`;
+        prevBtn.disabled = index === 1;
+        nextBtn.disabled = index === max;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (index > 1) {
+          index--;
+          update();
+        }
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (index < max) {
+          index++;
+          update();
+        }
+      });
+
+      update(); // initial display
+    }
+  });
+</script>
+
+
+
+
+	       </body>
+
+</html>
