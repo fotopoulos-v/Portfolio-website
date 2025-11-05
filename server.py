@@ -1,7 +1,7 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from flask import Flask, render_template, url_for, request, redirect, send_file, send_from_directory
+from flask import Flask, render_template, url_for, request, redirect, send_file, send_from_directory, Response
 import datetime
 import csv
 import os
@@ -40,9 +40,13 @@ def send_email(subject, body):
 def my_home():
     return render_template('index.html')
 
+
+
 @app.route('/sitemap.xml')
 def sitemap():
-    return send_from_directory(os.path.dirname(__file__), 'sitemap.xml')
+    with open('sitemap.xml', 'r', encoding='utf-8') as f:
+        xml_data = f.read()
+    return Response(xml_data, mimetype='application/xml')
 
 @app.route('/robots.txt')
 def robots():
