@@ -40,6 +40,11 @@ def send_email(subject, body):
 def my_home():
     return render_template('index.html')
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(os.path.dirname(__file__), 'sitemap.xml')
+
+
 @app.route("/<string:page_name>")
 def html_page(page_name):
     return render_template(page_name)
