@@ -44,9 +44,14 @@ def my_home():
 
 @app.route('/sitemap.xml')
 def sitemap():
-    with open('sitemap.xml', 'r', encoding='utf-8') as f:
-        xml_data = f.read()
-    return Response(xml_data, mimetype='application/xml')
+    # Absolute path to sitemap.xml (same folder as server.py)
+    sitemap_path = os.path.join(os.path.dirname(__file__), 'sitemap.xml')
+    try:
+        with open(sitemap_path, 'r', encoding='utf-8') as f:
+            xml_data = f.read()
+        return Response(xml_data, mimetype='application/xml')
+    except Exception as e:
+        return f"Error reading sitemap.xml: {e}", 500
 
 @app.route('/robots.txt')
 def robots():
