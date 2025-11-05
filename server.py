@@ -44,6 +44,10 @@ def my_home():
 def sitemap():
     return send_from_directory(os.path.dirname(__file__), 'sitemap.xml')
 
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(os.path.dirname(__file__), 'robots.txt', mimetype='text/plain')
+
 
 @app.route("/<string:page_name>")
 def html_page(page_name):
