@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
+  <link href="./static/assets/images/favicon2.png" rel="icon">
+  <link rel='shortcut icon' href="{{url_for('static', filename='assets/images/favicon2.png')}}">
+
+  <title>AI Personal Assistant</title>
+
+  <style>
+    .home-button {
+      position: fixed;
+      top: 3px;
+      left: 3px;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #0074d9;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .home-button:hover {
+      background-color: #0056b3;
+      color: #bbe0fc;
+      text-decoration: none;
+    }
+  </style>
+
+  <link href="./static/main.d8e0d294.css" rel="stylesheet">
+</head>
+
+<body class="">
+  <a href="/" class="home-button">Home</a>
+
+  <div class="background-color-layer" style="background-image: url('/static/assets/images/bot2.png')"></div>
+
+  <main class="content-wrapper">
+    <header class="white-text-container section-container">
+      <div class="text-center">
+        <h1>AI Personal Assistant</h1>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+
+          <div class="card">
+            <div class="card-block">
+              <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Overview</h2>
+              <div class="row">
+                <div class="col-md-4">
+                  <p><img src="./static/assets/images/bot2.png" class="img-responsive" alt="AI Personal Assistant"></p>
+                </div>
+                <div class="col-md-8">
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">What This AI Assistant Does</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">This system acts like a smart personal helper that works automatically every day. It is an assistant 
+				  that you can interact with through your PC or mobile phone.</p>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">🌅 Morning Update</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">Every morning, it <b style="color: #000000;">gathers important information and sends you a clear summary on Telegram (mobile phone)</b>:</p>
+                  <p style="text-align: justify; font-size: 18px;">
+                    The weather (today and next few days)<br>
+                    Your unread emails (with short summaries)<br>
+                    Your calendar events<br>
+                    Your tasks for the week<br>
+                    The latest AI and tech news (simplified and ranked)<br>
+                    Relevant job opportunities
+                  </p>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">🏋️ Daily Workout</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">Later in the morning, <b style="color: #000000;">it sends you a quick 7-minute workout plan</b>:</p>
+                  <p style="text-align: justify; font-size: 18px;">
+                    Designed for home (no gym needed)<br>
+                    Changes every day to target different muscles<br>
+                    Adjusts difficulty based on your consistency<br>
+                    Includes visuals (GIFs/videos) to guide you
+                  </p>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">💬 Chat Anytime</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">You can also <b style="color: #000000;">open a simple web chat and ask things</b> like:</p>
+                  <p style="text-align: justify; font-size: 18px;">
+                    "What will the weather be like tomorrow?"<br>
+                    "Any new emails?"<br>
+                    "Give me today's workout"<br><br>
+					
+					or <b style="color: #000000;">ask it to add tasks or calendar events</b> in your connected account:<br>
+					"Add task Pay the bills"<br>
+					"Add event Dentist appointment on 2026-05-11 at 15:00 for 60m alert 30m before location Amalias 26, Athens"
+                  </p>
+                  <p style="text-align: justify; font-size: 18px;">It understands your request and responds or acts instantly.</p>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">How It Feels to Use</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">You don't have to open apps or check multiple sources.</p>
+                  <p style="text-align: justify; font-size: 18px;"><b style="color: #000000;">Everything important comes to you automatically in one place</b>, and you can ask for anything whenever you want.</p>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">In One Sentence</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">It’s like having a personal assistant that gathers your daily information, summarizes it clearly, and helps you stay informed and active every day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-block">
+              <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Architecture and Features</h2>
+              <div class="row">
+                <div class="col-md-4">
+                  <p><img src="./static/assets/images/code.png" class="img-responsive" alt="Architecture and features"></p>
+                </div>
+                <div class="col-md-8">
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">Automation pipeline:</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">Cron (08:30 / 10:00) -> orchestrators (main.py / workout_main.py) -> data collection layer (Weather, Gmail, Calendar, Tasks, News, Jobs, ExerciseDB) -> AI processing (Gemini 2.5 Flash with Groq fallback) -> report generation (Telegram Markdown, HTML, plain text) -> Telegram notification with retry and rate-limit handling.</p>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">Daily morning report:</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">
+                    <b style="color: black;">- Weather:</b> Current conditions and 3-day forecast with temperature, humidity, wind speed, UV index, and precipitation probability.<br>
+                    <b style="color: black;">- Email:</b> Unread Gmail extraction with newsletter-vs-regular classification via List-Unsubscribe header checks and text heuristics.<br>
+                    <b style="color: black;">- Calendar:</b> Upcoming Google Calendar events for the next 24 hours.<br>
+                    <b style="color: black;">- Tasks:</b> Open Google Tasks due this week.<br>
+                    <b style="color: black;">- AI and tech news:</b> OpenAI, Hugging Face, TechCrunch AI, and Google AI Blog feeds, deduplicated and LLM-ranked (top 3 per source).<br>
+                    <b style="color: black;">- Job search:</b> Targeted Google Jobs listings via SerpAPI with monthly usage cap.
+                  </p>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">Workout module:</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">Daily 7-minute format: 60-second warm-up plus 5 exercises in 40s/20s intervals, 5-day muscle-group rotation, home-equipment constraints, adaptive intensity scaling based on streak, and exercise media (GIF/video) delivery in Telegram.</p>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">Web chat interface:</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">FastAPI backend with single-page chat UI, intent routing across weather/emails/news/jobs/workouts/calendar/tasks, quick-action shortcuts, multi-turn session state, and on-demand Telegram dispatch.</p>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">Reliability:</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">Gemini is primary, Groq is automatic fallback on quota/rate-limit events, and deterministic plain-text summaries are used if both LLMs are unavailable. Reports are persisted as HTML/TXT logs, and modules fail independently without crashing the orchestrator.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-block">
+              <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">APIs and Technology Stack</h2>
+              <div class="row">
+                <div class="col-md-12">
+                  <p style="text-align: justify; font-size: 18px;">Integrations include Google Gemini 2.5 Flash, Groq, OpenWeather 3.0, Gmail API, Google Calendar API, Google Tasks API, Telegram Bot API, ExerciseDB, SerpAPI (Google Jobs), and RSS sources (OpenAI Blog, Hugging Face Blog, TechCrunch AI, Google AI Blog).</p>
+                  <ul>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Language:</b> Python 3.11+</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Web framework:</b> FastAPI + Uvicorn</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">LLM clients:</b> google-generativeai, groq</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Google APIs:</b> google-api-python-client, google-auth-oauthlib</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Telegram:</b> python-telegram-bot v20 (async)</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">RSS parsing:</b> feedparser</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">HTTP:</b> requests, aiohttp</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Scheduling/config:</b> Linux cron, python-dotenv</p></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-block">
+              <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">How It Operates</h2>
+              <div class="row">
+                <div class="col-md-12">
+                  <ol>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Scheduled trigger:</b> Two cron jobs fire daily (08:30 for report, 10:00 for workout).</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Data collection:</b> Each tool module calls its API and returns structured output with isolated error handling.</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">AI enrichment:</b> Email/news batches are summarized and ranked by Gemini, with Groq fallback.</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Formatting:</b> Telegram Markdown, styled HTML, and plain text reports are composed and archived to logs.</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">Delivery:</b> Telegram bot sends content in sections with retry attempts and retry_after-aware back-off.</p></li>
+                    <li><p style="text-align: justify; font-size: 18px;"><b style="color: black;">On-demand mode:</b> Chat server can be started anytime for conversational access to the same pipeline.</p></li>
+                  </ol>
+
+                  <p style="margin-bottom: 0px; color: #11329e;"><b><u><span style="font-size: 18px;">Design choices:</span></u></b></p>
+                  <p style="text-align: justify; font-size: 18px;">The assistant is designed around free-tier usage limits, graceful degradation, home-first workout practicality, and clear separation of concerns so each module is independently testable and maintainable.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer-container white-text-container text-center">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12">
+                  <p style="font-size: 16px;">&copy; 2026 Vasilios Fotopoulos | AI Personal Assistant Project</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>
