@@ -120,6 +120,24 @@
 
           <div class="card">
             <div class="card-block">
+              <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Demo Video</h2>
+              <div class="row">
+                <div class="col-md-12">
+                  <p style="text-align: justify; font-size: 18px;">Watch a quick walkthrough of the AI Assistant in action. Use the video controls to play or pause, and restart it once the demo finishes.</p>
+                  <video id="assistant-demo-video" class="img-responsive" style="width: 100%; max-width: 900px; margin: 0 auto; display: block;" controls preload="metadata">
+                    <source src="{{url_for('static', filename='assets/videos/ai_assistant_video2.webm')}}" type="video/webm">
+                    Your browser does not support the video tag.
+                  </video>
+                  <div style="text-align: center; margin-top: 12px;">
+                    <button id="assistant-demo-restart" type="button" style="display: none; padding: 8px 16px; background-color: #0074d9; color: #fff; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">Restart Demo</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-block">
               <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Architecture and Features</h2>
               <div class="row">
                 <div class="col-md-4">
@@ -208,6 +226,30 @@
       </div>
     </div>
   </main>
+
+  <script>
+    (function () {
+      var demoVideo = document.getElementById('assistant-demo-video');
+      var restartButton = document.getElementById('assistant-demo-restart');
+
+      if (!demoVideo || !restartButton) {
+        return;
+      }
+
+      demoVideo.addEventListener('ended', function () {
+        restartButton.style.display = 'inline-block';
+      });
+
+      demoVideo.addEventListener('play', function () {
+        restartButton.style.display = 'none';
+      });
+
+      restartButton.addEventListener('click', function () {
+        demoVideo.currentTime = 0;
+        demoVideo.play();
+      });
+    })();
+  </script>
 
 </body>
 
