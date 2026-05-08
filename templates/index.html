@@ -118,84 +118,101 @@
 <style>
 /* ===== created apps section ===== */
 
-@media (min-width: 992px) {
-  .project-grid > .col-md-4:nth-child(3n + 1) {
-    clear: left;
-  }
+.apps-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
 }
 
 .app-card {
-  padding: 20px !important;
-  background-color: #ffffff !important; /* White background makes the frame pop */
-  border-radius: 8px !important;
-  margin-bottom: 20px;
-  /* Add the colored frame here */
-  border: 3px solid #003366; /* A nice data-science blue */
+  position: relative;
+  width: 320px;
+  padding: 32px 28px 26px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 3px solid #003366;
+  text-align: center;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
+  flex-shrink: 0;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* Optional: Card lifts slightly when you hover anywhere on it */
 .app-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+  text-decoration: none;
 }
 
-.app-card-img-link {
-  display: block !important;
-  text-align: center !important;
-  width: 100% !important;
-  margin-bottom: 15px;
+.app-card-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-.app-card-img-link img {
-  display: inline-block !important;
-  /* Adjust this percentage to control how small the images are */
-  max-width: 50% !important; 
-  height: auto !important;
-  margin: 0 auto !important;
+.app-card-img-wrap img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
   border-radius: 4px;
+  display: block;
 }
-
-
 
 .app-card-title {
-  text-align: center !important;
-  width: 100% !important;
-  margin: 8px 0 12px 0 !important;
+  text-align: center;
 }
 
 .app-card-title h3 {
-  text-align: center !important;
-  margin: 0 !important;
+  margin: 0;
+  font-size: 1.9rem;
+  color: #003366;
 }
 
-.app-card-title h3 a {
-  display: inline !important;
-}
-
+/* Hover overlay with description */
 .app-card-desc {
-  text-align: left;
-  overflow: visible !important;
-  max-height: none !important;
-  height: auto !important;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 51, 102, 0.93);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 5px;
+}
+
+.app-card:hover .app-card-desc {
+  opacity: 1;
 }
 
 .app-card-desc p {
-  /* This fixes your text alignment */
-  text-align: justify;
-  text-justify: inter-word;
-  
-  overflow-wrap: break-word;
-  word-break: break-word;
-  line-height: 1.6;
+  font-size: 1.8rem;
+  line-height: 1.65;
+  text-align: center;
   margin: 0;
-  
+  color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .app-card-img-link img {
-    max-width: 80% !important;
+/* Keep project cards left-aligned when wrapping to a second row */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.project-grid > .col-md-4 {
+  float: none;
+}
+
+@media (max-width: 576px) {
+  .app-card {
+    width: calc(50% - 10px);
   }
 }
 </style>
@@ -343,58 +360,55 @@
   <div class="card-block">
     <h2 style="text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">Created Apps</h2>
 
-    <div class="row">
-      
-      <div class="col-md-4">
-        <div class="app-card">
-          <a href="https://boardgame-guru.streamlit.app/" class="app-card-img-link shine-hover" target="_blank" rel="noopener noreferrer">
-            <img src="./static/assets/images/guru_logo_small.png" alt="BoardGame-Guru">
-          </a>
-          <div class="app-card-title">
-            <h3 class="h5">
-              <a href="https://boardgame-guru.streamlit.app/" target="_blank" rel="noopener noreferrer">BoardGame-Guru</a>
-            </h3>
-          </div>
-          <div class="app-card-desc">
-            <p>Upload your board game rulebooks and ask questions in plain language - BoardGame Guru reads your PDFs and explains the rules so you can focus on playing.
-			<br>🧠 Powered by advanced language models and embeddings for fast, accurate answers.</p>
-          </div>
-        </div>
-      </div>
+    <div class="apps-row">
 
-      <div class="col-md-4">
-        <div class="app-card">
-          <a href="https://boardgame-scout.streamlit.app/" class="app-card-img-link shine-hover" target="_blank" rel="noopener noreferrer">
-            <img src="./static/assets/images/scout_logo_small.png" alt="BoardGame-Scout">
-          </a>
-          <div class="app-card-title">
-            <h3 class="h5">
-              <a href="https://boardgame-scout.streamlit.app/" target="_blank" rel="noopener noreferrer">BoardGame-Scout</a>
-            </h3>
-          </div>
-          <div class="app-card-desc">
-            <p>A web app that uses the official BoardGameGeek API to help users discover board games by name or through dynamic filters. The app displays current 
-			hot games, lets users view their BGG-owned, rated, and wishlist games by entering their username, and provides personalized board game recommendations.</p>
-          </div>
+      <a href="https://boardgame-broke.streamlit.app/" class="app-card shine-hover" target="_blank" rel="noopener noreferrer">
+        <div class="app-card-img-wrap">
+          <img src="./static/assets/images/broke_logo_small.png" alt="BoardGame-Broke">
         </div>
-      </div>
+        <div class="app-card-title">
+          <h3 class="h5">BoardGame-Broke</h3>
+        </div>
+        <div class="app-card-desc">
+          <p>Hunt the best deal before your wallet gives up! Searches 29 Greek online stores simultaneously - shows prices, availability, and direct links. Export results as a PDF report.</p>
+        </div>
+      </a>
 
-      <div class="col-md-4">
-        <div class="app-card">
-          <a href="https://pdf-tool-vf.streamlit.app/" class="app-card-img-link shine-hover" target="_blank" rel="noopener noreferrer">
-            <img src="./static/assets/images/pdf-tool_small.png" alt="PDF-Tool">
-          </a>
-          <div class="app-card-title">
-            <h3 class="h5">
-              <a href="https://pdf-tool-vf.streamlit.app/" target="_blank" rel="noopener noreferrer">PDF-Tool</a>
-            </h3>
-          </div>
-          <div class="app-card-desc">
-            <p>A powerful PDF Tool built with Streamlit. Easily compress PDFs, extract text or pages, merge, split, rotate PDF files, and convert txt, py, or 
-			ipynb files to PDF — all through a clean and user-friendly web interface.</p>
-          </div>
+      <a href="https://boardgame-guru.streamlit.app/" class="app-card shine-hover" target="_blank" rel="noopener noreferrer">
+        <div class="app-card-img-wrap">
+          <img src="./static/assets/images/guru_logo_small.png" alt="BoardGame-Guru">
         </div>
-      </div>
+        <div class="app-card-title">
+          <h3 class="h5">BoardGame-Guru</h3>
+        </div>
+        <div class="app-card-desc">
+          <p>Upload your board game rulebooks and ask questions in plain language. BoardGame Guru reads your PDFs and explains the rules - powered by advanced language models and embeddings.</p>
+        </div>
+      </a>
+
+      <a href="https://boardgame-scout.streamlit.app/" class="app-card shine-hover" target="_blank" rel="noopener noreferrer">
+        <div class="app-card-img-wrap">
+          <img src="./static/assets/images/scout_logo_small.png" alt="BoardGame-Scout">
+        </div>
+        <div class="app-card-title">
+          <h3 class="h5">BoardGame-Scout</h3>
+        </div>
+        <div class="app-card-desc">
+          <p>Uses the BoardGameGeek API to discover games by name or filters. Browse hot games, view your BGG collection, and get personalized recommendations.</p>
+        </div>
+      </a>
+
+      <a href="https://pdf-tool-vf.streamlit.app/" class="app-card shine-hover" target="_blank" rel="noopener noreferrer">
+        <div class="app-card-img-wrap">
+          <img src="./static/assets/images/pdf-tool_small.png" alt="PDF-Tool">
+        </div>
+        <div class="app-card-title">
+          <h3 class="h5">PDF-Tool</h3>
+        </div>
+        <div class="app-card-desc">
+          <p>Compress, merge, split, rotate, and extract from PDFs. Also converts txt, py, and ipynb files to PDF - all through a clean Streamlit interface.</p>
+        </div>
+      </a>
 
     </div>
   </div>
