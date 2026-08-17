@@ -2,11 +2,33 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from flask import Flask, render_template, url_for, request, redirect, send_file, send_from_directory, Response
+from jinja2 import TemplateNotFound
 import datetime
 import csv
 import os
 
 app = Flask(__name__)
+
+# Base URL used to build self-referencing canonical tags. Change this in one
+# place (or set the SITE_URL env var) if the site moves to a custom domain.
+SITE_URL = os.getenv('SITE_URL', 'https://fotopoulos.eu.pythonanywhere.com').rstrip('/')
+
+
+@app.context_processor
+def inject_site_url():
+    return {'site_url': SITE_URL}
+
+
+# Raw downloads are files, not pages: let crawlers fetch them, keep them out
+# of the index.
+NOINDEX_PREFIXES = ('/static/assets/downloads/', '/download/')
+
+
+@app.after_request
+def tag_downloads_noindex(response):
+    if request.path.startswith(NOINDEX_PREFIXES):
+        response.headers['X-Robots-Tag'] = 'noindex'
+    return response
 
 
 # Function to send email notification
@@ -60,7 +82,16 @@ def robots():
 
 @app.route("/<string:page_name>")
 def html_page(page_name):
-    return render_template(page_name)
+    # An unknown page must be a 404, not a 500 from TemplateNotFound bubbling up.
+    try:
+        return render_template(page_name)
+    except TemplateNotFound:
+        return render_template('404.html'), 404
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
 
 def write_to_file(data):
     with open('database.txt', mode='a') as database:

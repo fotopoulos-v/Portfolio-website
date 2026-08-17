@@ -1,82 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+<!-- Only canonical, indexable HTML pages belong here.
+     Raw downloads (.pdf/.csv/.xlsx/.ipynb/.R/.txt) and the generated
+     notebook exports (*_thecode.html, *_first500.html) are intentionally
+     excluded: they are served with noindex and are not pages. -->
 
 <url>
   <loc>https://fotopoulos.eu.pythonanywhere.com/</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
+  <lastmod>2026-05-10</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://fotopoulos.eu.pythonanywhere.com/static/assets/downloads/FotopoulosVasileiosCV.pdf</loc>
-  <lastmod>2025-10-13T20:32:07+00:00</lastmod>
+  <loc>https://fotopoulos.eu.pythonanywhere.com/ai_assistant.html</loc>
+  <lastmod>2026-04-25</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fotopoulos.eu.pythonanywhere.com/project4.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
+  <lastmod>2025-10-01</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fotopoulos.eu.pythonanywhere.com/project3.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
+  <lastmod>2025-08-28</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fotopoulos.eu.pythonanywhere.com/project2.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
+  <lastmod>2025-08-28</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fotopoulos.eu.pythonanywhere.com/project1.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
+  <lastmod>2025-09-08</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://fotopoulos.eu.pythonanywhere.com/download/project4_requirements.txt</loc>
-  <lastmod>2025-10-01T16:35:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fotopoulos.eu.pythonanywhere.com/project2.1_thecode.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fotopoulos.eu.pythonanywhere.com/project2.2_theoutput.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fotopoulos.eu.pythonanywhere.com/project1_thecode.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fotopoulos.eu.pythonanywhere.com/bgg_project_first500.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fotopoulos.eu.pythonanywhere.com/Designers_first500.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fotopoulos.eu.pythonanywhere.com/Artists_first500.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://fotopoulos.eu.pythonanywhere.com/Publishers_first500.html</loc>
-  <lastmod>2025-11-05T19:51:23+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
 
 </urlset>
